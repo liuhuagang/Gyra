@@ -1,0 +1,90 @@
+// Copyright 2024 Huagang Liu. All Rights Reserved.
+
+#pragma once
+
+#include "NativeGameplayTags.h"
+
+namespace GyraGameplayTags
+{
+	GYRAGAME_API	FGameplayTag FindTagByString(const FString& TagString, bool bMatchPartialString = false);
+
+	// Declare all of the custom native tags that Gyra will use
+	// 声明Gyra将使用的所有自定义本地标签
+
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Ability_ActivateFail_IsDead);
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Ability_ActivateFail_Cooldown);
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Ability_ActivateFail_Cost);
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Ability_ActivateFail_TagsBlocked);
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Ability_ActivateFail_TagsMissing);
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Ability_ActivateFail_Networking);
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Ability_ActivateFail_ActivationGroup);
+
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Ability_Behavior_SurvivesDeath);
+
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(InputTag_Move);
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(InputTag_Look_Mouse);
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(InputTag_Look_Stick);
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(InputTag_Crouch);
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(InputTag_AutoRun);
+
+	// 这个是Actor的初始化中使用的Tag状态
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(InitState_Spawned);
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(InitState_DataPrepared);
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(InitState_DataAvailable);
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(InitState_DataInitialized);
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(InitState_GameplayReady);
+
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(GameplayEvent_Death);
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(GameplayEvent_Reset);
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(GameplayEvent_RequestReset);
+
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(SetByCaller_Damage);
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(SetByCaller_Heal);
+
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Cheat_GodMode);
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Cheat_UnlimitedHealth);
+
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Status_Crouching);
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Status_AutoRunning);
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Status_Death);
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Status_Death_Dying);
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Status_Death_Dead);
+
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Gyra_ShooterGame_Inventory_MaxStackCount);
+
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(DamageEffect_Physics_NormalAttack);
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(DamageEffect_Physics_WeakAttack);
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(DamageEffect_Physics_CriticalAttack);
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(DamageEffect_Physics_DeadAttack);
+
+
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(TAG_Gameplay_Damage);
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(TAG_Gameplay_DamageImmunity);
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(TAG_Gameplay_DamageSelfDestruct);
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(TAG_Gameplay_FellOutOfWorld);
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(TAG_Gyra_Damage_Message);
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(TAG_Gyra_Elimination_Message);
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(TAG_Gyra_Assist_Message);
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(TAG_Gyra_Cost_Message);
+
+
+
+
+
+	// These are mappings from MovementMode enums to GameplayTags associated with those enums (below)
+	// 这些是从MovementMode枚举到GameplayTags与这些枚举相关联的映射（如下）
+	GYRAGAME_API	extern const TMap<uint8, FGameplayTag> MovementModeTagMap;
+	GYRAGAME_API	extern const TMap<uint8, FGameplayTag> CustomMovementModeTagMap;
+
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Movement_Mode_Walking);
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Movement_Mode_NavWalking);
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Movement_Mode_Falling);
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Movement_Mode_Swimming);
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Movement_Mode_Flying);
+
+	GYRAGAME_API	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Movement_Mode_Custom);
+
+
+
+};
+

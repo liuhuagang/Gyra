@@ -1,0 +1,143 @@
+{
+  "FileVersion": 3,
+  "Version": 1,
+  "VersionName": "1.0",
+  "FriendlyName": "GyraFramework",
+  "Description": "小刚的高级游戏框架",
+  "Category": "XG",
+  "CreatedBy": "",
+  "CreatedByURL": "",
+  "DocsURL": "",
+  "MarketplaceURL": "",
+  "SupportURL": "",
+  "CanContainContent": true,
+  "IsBetaVersion": false,
+  "IsExperimentalVersion": false,
+  "Installed": false,
+  "Modules": [
+    {
+      "Name": "GyraGame",
+      "Type": "Runtime",
+      "LoadingPhase": "Default"
+    },
+    {
+      "Name": "GyraEditor",
+      "Type": "Editor",
+      "LoadingPhase": "PreLoadingScreen"
+    }
+  ],
+  "Plugins": [
+    {
+      "Name": "GameplayAbilities",
+      "Enabled": true
+    },
+    {
+      "Name": "ModularGameplay",
+      "Enabled": true
+    },
+    {
+      "Name": "ModularGameplayActors",
+      "Enabled": true
+    },
+    {
+      "Name": "DataRegistry",
+      "Enabled": true
+    },
+    {
+      "Name": "ReplicationGraph",
+      "Enabled": true
+    },
+    {
+      "Name": "GameFeatures",
+      "Enabled": true
+    },
+    {
+      "Name": "SignificanceManager",
+      "Enabled": true
+    },
+    {
+      "Name": "OnlineFramework",
+      "Enabled": true
+    },
+    {
+      "Name": "CommonLoadingScreen",
+      "Enabled": true
+    },
+    {
+      "Name": "Niagara",
+      "Enabled": true
+    },
+    {
+      "Name": "AsyncMixin",
+      "Enabled": true
+    },
+    {
+      "Name": "ControlFlows",
+      "Enabled": true
+    },
+    {
+      "Name": "Mutable",
+      "Enabled": true
+    },
+    {
+      "Name": "EnhancedInput",
+      "Enabled": true
+    },
+    {
+      "Name": "Gauntlet",
+      "Enabled": true
+    },
+    {
+      "Name": "CommonUI",
+      "Enabled": true
+    },
+    {
+      "Name": "GameSettings",
+      "Enabled": true
+    },
+    {
+      "Name": "CommonGame",
+      "Enabled": true
+    },
+    {
+      "Name": "CommonUser",
+      "Enabled": true
+    },
+    {
+      "Name": "GameplayMessageRouter",
+      "Enabled": true
+    },
+    {
+      "Name": "UIExtension",
+      "Enabled": true
+    },
+    {
+      "Name": "AudioModulation",
+      "Enabled": true
+    },
+    {
+      "Name": "DTLSHandlerComponent",
+      "Enabled": true
+    },
+    {
+      "Name": "GameSubtitles",
+      "Enabled": true
+    },
+    {
+      "Name": "MeleeTrace",
+      "Enabled": true
+    },
+    {
+      "Name": "ControlRig",
+      "Enabled": true 
+    },
+    {
+      "Name": "ControlRigModules",
+      "Enabled": true
+    },
+    {
+      "Name": "Mutable",
+      "Enabled": true
+    }
+  ]
+}

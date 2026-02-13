@@ -1,0 +1,522 @@
+项目目录代码结构: Source/
+├── LyraEditor/
+│   ├── Commandlets/
+│   │   ├── ContentValidationCommandlet.cpp
+│   │   └── ContentValidationCommandlet.h
+│   ├── Private/
+│   │   ├── AssetTypeActions_LyraContextEffectsLibrary.cpp
+│   │   ├── AssetTypeActions_LyraContextEffectsLibrary.h
+│   │   ├── GameEditorStyle.cpp
+│   │   ├── GameEditorStyle.h
+│   │   ├── LyraContextEffectsLibraryFactory.cpp
+│   │   └── LyraContextEffectsLibraryFactory.h
+│   ├── Utilities/
+│   │   ├── CheckChaosMeshCollision.cpp
+│   │   ├── CreateRedirectorPackage.cpp
+│   │   └── DiffCollectionReferenceSupport.cpp
+│   ├── Validation/
+│   │   ├── EditorValidator.cpp
+│   │   ├── EditorValidator.h
+│   │   ├── EditorValidator_Blueprints.cpp
+│   │   ├── EditorValidator_Blueprints.h
+│   │   ├── EditorValidator_Load.cpp
+│   │   ├── EditorValidator_Load.h
+│   │   ├── EditorValidator_MaterialFunctions.cpp
+│   │   ├── EditorValidator_MaterialFunctions.h
+│   │   ├── EditorValidator_SourceControl.cpp
+│   │   └── EditorValidator_SourceControl.h
+│   ├── LyraEditor.cpp
+│   ├── LyraEditor.h
+│   ├── LyraEditorEngine.cpp
+│   └── LyraEditorEngine.h
+├── LyraGame/
+│   ├── AbilitySystem/
+│   │   ├── Abilities/
+│   │   │   ├── LyraAbilityCost.h
+│   │   │   ├── LyraAbilityCost_InventoryItem.cpp
+│   │   │   ├── LyraAbilityCost_InventoryItem.h
+│   │   │   ├── LyraAbilityCost_ItemTagStack.cpp
+│   │   │   ├── LyraAbilityCost_ItemTagStack.h
+│   │   │   ├── LyraAbilityCost_PlayerTagStack.cpp
+│   │   │   ├── LyraAbilityCost_PlayerTagStack.h
+│   │   │   ├── LyraAbilitySimpleFailureMessage.h
+│   │   │   ├── LyraGameplayAbility.cpp
+│   │   │   ├── LyraGameplayAbility.h
+│   │   │   ├── LyraGameplayAbility_Death.cpp
+│   │   │   ├── LyraGameplayAbility_Death.h
+│   │   │   ├── LyraGameplayAbility_Jump.cpp
+│   │   │   ├── LyraGameplayAbility_Jump.h
+│   │   │   ├── LyraGameplayAbility_Reset.cpp
+│   │   │   └── LyraGameplayAbility_Reset.h
+│   │   ├── Attributes/
+│   │   │   ├── LyraAttributeSet.cpp
+│   │   │   ├── LyraAttributeSet.h
+│   │   │   ├── LyraCombatSet.cpp
+│   │   │   ├── LyraCombatSet.h
+│   │   │   ├── LyraHealthSet.cpp
+│   │   │   └── LyraHealthSet.h
+│   │   ├── Executions/
+│   │   │   ├── LyraDamageExecution.cpp
+│   │   │   ├── LyraDamageExecution.h
+│   │   │   ├── LyraHealExecution.cpp
+│   │   │   └── LyraHealExecution.h
+│   │   ├── Phases/
+│   │   │   ├── LyraGamePhaseAbility.cpp
+│   │   │   ├── LyraGamePhaseAbility.h
+│   │   │   ├── LyraGamePhaseLog.h
+│   │   │   ├── LyraGamePhaseSubsystem.cpp
+│   │   │   └── LyraGamePhaseSubsystem.h
+│   │   ├── LyraAbilitySet.cpp
+│   │   ├── LyraAbilitySet.h
+│   │   ├── LyraAbilitySourceInterface.cpp
+│   │   ├── LyraAbilitySourceInterface.h
+│   │   ├── LyraAbilitySystemComponent.cpp
+│   │   ├── LyraAbilitySystemComponent.h
+│   │   ├── LyraAbilitySystemGlobals.cpp
+│   │   ├── LyraAbilitySystemGlobals.h
+│   │   ├── LyraAbilityTagRelationshipMapping.cpp
+│   │   ├── LyraAbilityTagRelationshipMapping.h
+│   │   ├── LyraGameplayAbilityTargetData_SingleTargetHit.cpp
+│   │   ├── LyraGameplayAbilityTargetData_SingleTargetHit.h
+│   │   ├── LyraGameplayCueManager.cpp
+│   │   ├── LyraGameplayCueManager.h
+│   │   ├── LyraGameplayEffectContext.cpp
+│   │   ├── LyraGameplayEffectContext.h
+│   │   ├── LyraGlobalAbilitySystem.cpp
+│   │   ├── LyraGlobalAbilitySystem.h
+│   │   ├── LyraTaggedActor.cpp
+│   │   └── LyraTaggedActor.h
+│   ├── Animation/
+│   │   ├── LyraAnimInstance.cpp
+│   │   └── LyraAnimInstance.h
+│   ├── Audio/
+│   │   ├── LyraAudioMixEffectsSubsystem.cpp
+│   │   ├── LyraAudioMixEffectsSubsystem.h
+│   │   ├── LyraAudioSettings.cpp
+│   │   └── LyraAudioSettings.h
+│   ├── Camera/
+│   │   ├── LyraCameraAssistInterface.h
+│   │   ├── LyraCameraComponent.cpp
+│   │   ├── LyraCameraComponent.h
+│   │   ├── LyraCameraMode.cpp
+│   │   ├── LyraCameraMode.h
+│   │   ├── LyraCameraMode_ThirdPerson.cpp
+│   │   ├── LyraCameraMode_ThirdPerson.h
+│   │   ├── LyraPenetrationAvoidanceFeeler.h
+│   │   ├── LyraPlayerCameraManager.cpp
+│   │   ├── LyraPlayerCameraManager.h
+│   │   ├── LyraUICameraManagerComponent.cpp
+│   │   └── LyraUICameraManagerComponent.h
+│   ├── Character/
+│   │   ├── LyraCharacter.cpp
+│   │   ├── LyraCharacter.h
+│   │   ├── LyraCharacterMovementComponent.cpp
+│   │   ├── LyraCharacterMovementComponent.h
+│   │   ├── LyraCharacterWithAbilities.cpp
+│   │   ├── LyraCharacterWithAbilities.h
+│   │   ├── LyraHealthComponent.cpp
+│   │   ├── LyraHealthComponent.h
+│   │   ├── LyraHeroComponent.cpp
+│   │   ├── LyraHeroComponent.h
+│   │   ├── LyraPawn.cpp
+│   │   ├── LyraPawn.h
+│   │   ├── LyraPawnData.cpp
+│   │   ├── LyraPawnData.h
+│   │   ├── LyraPawnExtensionComponent.cpp
+│   │   └── LyraPawnExtensionComponent.h
+│   ├── Cosmetics/
+│   │   ├── LyraCharacterPartTypes.h
+│   │   ├── LyraControllerComponent_CharacterParts.cpp
+│   │   ├── LyraControllerComponent_CharacterParts.h
+│   │   ├── LyraCosmeticAnimationTypes.cpp
+│   │   ├── LyraCosmeticAnimationTypes.h
+│   │   ├── LyraCosmeticCheats.cpp
+│   │   ├── LyraCosmeticCheats.h
+│   │   ├── LyraCosmeticDeveloperSettings.cpp
+│   │   ├── LyraCosmeticDeveloperSettings.h
+│   │   ├── LyraPawnComponent_CharacterParts.cpp
+│   │   └── LyraPawnComponent_CharacterParts.h
+│   ├── Development/
+│   │   ├── LyraBotCheats.cpp
+│   │   ├── LyraBotCheats.h
+│   │   ├── LyraDeveloperSettings.cpp
+│   │   ├── LyraDeveloperSettings.h
+│   │   ├── LyraPlatformEmulationSettings.cpp
+│   │   └── LyraPlatformEmulationSettings.h
+│   ├── Equipment/
+│   │   ├── LyraEquipmentDefinition.cpp
+│   │   ├── LyraEquipmentDefinition.h
+│   │   ├── LyraEquipmentInstance.cpp
+│   │   ├── LyraEquipmentInstance.h
+│   │   ├── LyraEquipmentManagerComponent.cpp
+│   │   ├── LyraEquipmentManagerComponent.h
+│   │   ├── LyraGameplayAbility_FromEquipment.cpp
+│   │   ├── LyraGameplayAbility_FromEquipment.h
+│   │   ├── LyraPickupDefinition.cpp
+│   │   ├── LyraPickupDefinition.h
+│   │   ├── LyraQuickBarComponent.cpp
+│   │   └── LyraQuickBarComponent.h
+│   ├── Feedback/
+│   │   ├── ContextEffects/
+│   │   │   ├── AnimNotify_LyraContextEffects.cpp
+│   │   │   ├── AnimNotify_LyraContextEffects.h
+│   │   │   ├── LyraContextEffectComponent.cpp
+│   │   │   ├── LyraContextEffectComponent.h
+│   │   │   ├── LyraContextEffectsInterface.cpp
+│   │   │   ├── LyraContextEffectsInterface.h
+│   │   │   ├── LyraContextEffectsLibrary.cpp
+│   │   │   ├── LyraContextEffectsLibrary.h
+│   │   │   ├── LyraContextEffectsSubsystem.cpp
+│   │   │   └── LyraContextEffectsSubsystem.h
+│   │   └── NumberPops/
+│   │       ├── LyraDamagePopStyle.cpp
+│   │       ├── LyraDamagePopStyle.h
+│   │       ├── LyraDamagePopStyleNiagara.h
+│   │       ├── LyraNumberPopComponent.cpp
+│   │       ├── LyraNumberPopComponent.h
+│   │       ├── LyraNumberPopComponent_MeshText.cpp
+│   │       ├── LyraNumberPopComponent_MeshText.h
+│   │       ├── LyraNumberPopComponent_NiagaraText.cpp
+│   │       └── LyraNumberPopComponent_NiagaraText.h
+│   ├── GameFeatures/
+│   │   ├── GameFeatureAction_AddAbilities.cpp
+│   │   ├── GameFeatureAction_AddAbilities.h
+│   │   ├── GameFeatureAction_AddGameplayCuePath.cpp
+│   │   ├── GameFeatureAction_AddGameplayCuePath.h
+│   │   ├── GameFeatureAction_AddInputBinding.cpp
+│   │   ├── GameFeatureAction_AddInputBinding.h
+│   │   ├── GameFeatureAction_AddInputContextMapping.cpp
+│   │   ├── GameFeatureAction_AddInputContextMapping.h
+│   │   ├── GameFeatureAction_AddWidget.cpp
+│   │   ├── GameFeatureAction_AddWidget.h
+│   │   ├── GameFeatureAction_SplitscreenConfig.cpp
+│   │   ├── GameFeatureAction_SplitscreenConfig.h
+│   │   ├── GameFeatureAction_WorldActionBase.cpp
+│   │   ├── GameFeatureAction_WorldActionBase.h
+│   │   ├── LyraGameFeaturePolicy.cpp
+│   │   └── LyraGameFeaturePolicy.h
+│   ├── GameModes/
+│   │   ├── AsyncAction_ExperienceReady.cpp
+│   │   ├── AsyncAction_ExperienceReady.h
+│   │   ├── LyraBotCreationComponent.cpp
+│   │   ├── LyraBotCreationComponent.h
+│   │   ├── LyraExperienceActionSet.cpp
+│   │   ├── LyraExperienceActionSet.h
+│   │   ├── LyraExperienceDefinition.cpp
+│   │   ├── LyraExperienceDefinition.h
+│   │   ├── LyraExperienceManager.cpp
+│   │   ├── LyraExperienceManager.h
+│   │   ├── LyraExperienceManagerComponent.cpp
+│   │   ├── LyraExperienceManagerComponent.h
+│   │   ├── LyraGameMode.cpp
+│   │   ├── LyraGameMode.h
+│   │   ├── LyraGameState.cpp
+│   │   ├── LyraGameState.h
+│   │   ├── LyraUserFacingExperienceDefinition.cpp
+│   │   ├── LyraUserFacingExperienceDefinition.h
+│   │   ├── LyraWorldSettings.cpp
+│   │   └── LyraWorldSettings.h
+│   ├── Hotfix/
+│   │   ├── LyraHotfixManager.cpp
+│   │   ├── LyraHotfixManager.h
+│   │   ├── LyraRuntimeOptions.cpp
+│   │   ├── LyraRuntimeOptions.h
+│   │   ├── LyraTextHotfixConfig.cpp
+│   │   └── LyraTextHotfixConfig.h
+│   ├── Input/
+│   │   ├── LyraAimSensitivityData.cpp
+│   │   ├── LyraAimSensitivityData.h
+│   │   ├── LyraInputComponent.cpp
+│   │   ├── LyraInputComponent.h
+│   │   ├── LyraInputConfig.cpp
+│   │   ├── LyraInputConfig.h
+│   │   ├── LyraInputModifiers.cpp
+│   │   ├── LyraInputModifiers.h
+│   │   ├── LyraInputUserSettings.cpp
+│   │   ├── LyraInputUserSettings.h
+│   │   ├── LyraPlayerMappableKeyProfile.cpp
+│   │   └── LyraPlayerMappableKeyProfile.h
+│   ├── Interaction/
+│   │   ├── Abilities/
+│   │   │   ├── GameplayAbilityTargetActor_Interact.cpp
+│   │   │   ├── GameplayAbilityTargetActor_Interact.h
+│   │   │   ├── LyraGameplayAbility_Interact.cpp
+│   │   │   └── LyraGameplayAbility_Interact.h
+│   │   ├── Tasks/
+│   │   │   ├── AbilityTask_GrantNearbyInteraction.cpp
+│   │   │   ├── AbilityTask_GrantNearbyInteraction.h
+│   │   │   ├── AbilityTask_WaitForInteractableTargets.cpp
+│   │   │   ├── AbilityTask_WaitForInteractableTargets.h
+│   │   │   ├── AbilityTask_WaitForInteractableTargets_SingleLineTrace.cpp
+│   │   │   └── AbilityTask_WaitForInteractableTargets_SingleLineTrace.h
+│   │   ├── IInteractableTarget.h
+│   │   ├── IInteractionInstigator.h
+│   │   ├── InteractionOption.h
+│   │   ├── InteractionQuery.h
+│   │   ├── InteractionStatics.cpp
+│   │   ├── InteractionStatics.h
+│   │   └── LyraInteractionDurationMessage.h
+│   ├── Inventory/
+│   │   ├── IPickupable.cpp
+│   │   ├── IPickupable.h
+│   │   ├── InventoryFragment_EquippableItem.cpp
+│   │   ├── InventoryFragment_EquippableItem.h
+│   │   ├── InventoryFragment_PickupIcon.cpp
+│   │   ├── InventoryFragment_PickupIcon.h
+│   │   ├── InventoryFragment_QuickBarIcon.cpp
+│   │   ├── InventoryFragment_QuickBarIcon.h
+│   │   ├── InventoryFragment_SetStats.cpp
+│   │   ├── InventoryFragment_SetStats.h
+│   │   ├── LyraInventoryItemDefinition.cpp
+│   │   ├── LyraInventoryItemDefinition.h
+│   │   ├── LyraInventoryItemInstance.cpp
+│   │   ├── LyraInventoryItemInstance.h
+│   │   ├── LyraInventoryManagerComponent.cpp
+│   │   └── LyraInventoryManagerComponent.h
+│   ├── Messages/
+│   │   ├── GameplayMessageProcessor.cpp
+│   │   ├── GameplayMessageProcessor.h
+│   │   ├── LyraNotificationMessage.cpp
+│   │   ├── LyraNotificationMessage.h
+│   │   ├── LyraVerbMessage.h
+│   │   ├── LyraVerbMessageHelpers.cpp
+│   │   ├── LyraVerbMessageHelpers.h
+│   │   ├── LyraVerbMessageReplication.cpp
+│   │   └── LyraVerbMessageReplication.h
+│   ├── Performance/
+│   │   ├── LyraMemoryDebugCommands.cpp
+│   │   ├── LyraPerformanceSettings.cpp
+│   │   ├── LyraPerformanceSettings.h
+│   │   ├── LyraPerformanceStatSubsystem.cpp
+│   │   ├── LyraPerformanceStatSubsystem.h
+│   │   └── LyraPerformanceStatTypes.h
+│   ├── Physics/
+│   │   ├── LyraCollisionChannels.h
+│   │   ├── PhysicalMaterialWithTags.cpp
+│   │   └── PhysicalMaterialWithTags.h
+│   ├── Player/
+│   │   ├── LyraCheatManager.cpp
+│   │   ├── LyraCheatManager.h
+│   │   ├── LyraDebugCameraController.cpp
+│   │   ├── LyraDebugCameraController.h
+│   │   ├── LyraLocalPlayer.cpp
+│   │   ├── LyraLocalPlayer.h
+│   │   ├── LyraPlayerBotController.cpp
+│   │   ├── LyraPlayerBotController.h
+│   │   ├── LyraPlayerController.cpp
+│   │   ├── LyraPlayerController.h
+│   │   ├── LyraPlayerSpawningManagerComponent.cpp
+│   │   ├── LyraPlayerSpawningManagerComponent.h
+│   │   ├── LyraPlayerStart.cpp
+│   │   ├── LyraPlayerStart.h
+│   │   ├── LyraPlayerState.cpp
+│   │   └── LyraPlayerState.h
+│   ├── Replays/
+│   │   ├── AsyncAction_QueryReplays.cpp
+│   │   ├── AsyncAction_QueryReplays.h
+│   │   ├── LyraReplaySubsystem.cpp
+│   │   └── LyraReplaySubsystem.h
+│   ├── Settings/
+│   │   ├── CustomSettings/
+│   │   │   ├── LyraSettingAction_SafeZoneEditor.cpp
+│   │   │   ├── LyraSettingAction_SafeZoneEditor.h
+│   │   │   ├── LyraSettingKeyboardInput.cpp
+│   │   │   ├── LyraSettingKeyboardInput.h
+│   │   │   ├── LyraSettingValueDiscreteDynamic_AudioOutputDevice.cpp
+│   │   │   ├── LyraSettingValueDiscreteDynamic_AudioOutputDevice.h
+│   │   │   ├── LyraSettingValueDiscrete_Language.cpp
+│   │   │   ├── LyraSettingValueDiscrete_Language.h
+│   │   │   ├── LyraSettingValueDiscrete_MobileFPSType.cpp
+│   │   │   ├── LyraSettingValueDiscrete_MobileFPSType.h
+│   │   │   ├── LyraSettingValueDiscrete_OverallQuality.cpp
+│   │   │   ├── LyraSettingValueDiscrete_OverallQuality.h
+│   │   │   ├── LyraSettingValueDiscrete_PerfStat.cpp
+│   │   │   ├── LyraSettingValueDiscrete_PerfStat.h
+│   │   │   ├── LyraSettingValueDiscrete_Resolution.cpp
+│   │   │   └── LyraSettingValueDiscrete_Resolution.h
+│   │   ├── Screens/
+│   │   │   ├── LyraBrightnessEditor.cpp
+│   │   │   ├── LyraBrightnessEditor.h
+│   │   │   ├── LyraSafeZoneEditor.cpp
+│   │   │   └── LyraSafeZoneEditor.h
+│   │   ├── Widgets/
+│   │   │   ├── LyraSettingsListEntrySetting_KeyboardInput.cpp
+│   │   │   └── LyraSettingsListEntrySetting_KeyboardInput.h
+│   │   ├── LyraGameSettingRegistry.cpp
+│   │   ├── LyraGameSettingRegistry.h
+│   │   ├── LyraGameSettingRegistry_Audio.cpp
+│   │   ├── LyraGameSettingRegistry_Gamepad.cpp
+│   │   ├── LyraGameSettingRegistry_Gameplay.cpp
+│   │   ├── LyraGameSettingRegistry_MouseAndKeyboard.cpp
+│   │   ├── LyraGameSettingRegistry_PerfStats.cpp
+│   │   ├── LyraGameSettingRegistry_Video.cpp
+│   │   ├── LyraSettingsLocal.cpp
+│   │   ├── LyraSettingsLocal.h
+│   │   ├── LyraSettingsShared.cpp
+│   │   ├── LyraSettingsShared.h
+│   ├── System/
+│   │   ├── GameplayTagStack.cpp
+│   │   ├── GameplayTagStack.h
+│   │   ├── LyraActorUtilities.cpp
+│   │   ├── LyraActorUtilities.h
+│   │   ├── LyraAssetManager.cpp
+│   │   ├── LyraAssetManager.h
+│   │   ├── LyraAssetManagerStartupJob.cpp
+│   │   ├── LyraAssetManagerStartupJob.h
+│   │   ├── LyraDevelopmentStatics.cpp
+│   │   ├── LyraDevelopmentStatics.h
+│   │   ├── LyraGameData.cpp
+│   │   ├── LyraGameData.h
+│   │   ├── LyraGameEngine.cpp
+│   │   ├── LyraGameEngine.h
+│   │   ├── LyraGameInstance.cpp
+│   │   ├── LyraGameInstance.h
+│   │   ├── LyraGameSession.cpp
+│   │   ├── LyraGameSession.h
+│   │   ├── LyraReplicationGraph.cpp
+│   │   ├── LyraReplicationGraph.h
+│   │   ├── LyraReplicationGraphSettings.cpp
+│   │   ├── LyraReplicationGraphSettings.h
+│   │   ├── LyraReplicationGraphTypes.h
+│   │   ├── LyraSignificanceManager.cpp
+│   │   ├── LyraSignificanceManager.h
+│   │   ├── LyraSystemStatics.cpp
+│   │   └── LyraSystemStatics.h
+│   ├── Teams/
+│   │   ├── AsyncAction_ObserveTeam.cpp
+│   │   ├── AsyncAction_ObserveTeam.h
+│   │   ├── AsyncAction_ObserveTeamColors.cpp
+│   │   ├── AsyncAction_ObserveTeamColors.h
+│   │   ├── LyraTeamAgentInterface.cpp
+│   │   ├── LyraTeamAgentInterface.h
+│   │   ├── LyraTeamCheats.cpp
+│   │   ├── LyraTeamCheats.h
+│   │   ├── LyraTeamCreationComponent.cpp
+│   │   ├── LyraTeamCreationComponent.h
+│   │   ├── LyraTeamDisplayAsset.cpp
+│   │   ├── LyraTeamDisplayAsset.h
+│   │   ├── LyraTeamInfoBase.cpp
+│   │   ├── LyraTeamInfoBase.h
+│   │   ├── LyraTeamPrivateInfo.cpp
+│   │   ├── LyraTeamPrivateInfo.h
+│   │   ├── LyraTeamPublicInfo.cpp
+│   │   ├── LyraTeamPublicInfo.h
+│   │   ├── LyraTeamStatics.cpp
+│   │   ├── LyraTeamStatics.h
+│   │   ├── LyraTeamSubsystem.cpp
+│   │   └── LyraTeamSubsystem.h
+│   ├── Tests/
+│   │   ├── LyraGameplayRpcRegistrationComponent.cpp
+│   │   ├── LyraGameplayRpcRegistrationComponent.h
+│   │   ├── LyraTestControllerBootTest.cpp
+│   │   └── LyraTestControllerBootTest.h
+│   ├── UI/
+│   │   ├── Basic/
+│   │   │   ├── MaterialProgressBar.cpp
+│   │   │   └── MaterialProgressBar.h
+│   │   ├── Common/
+│   │   │   ├── LyraBoundActionButton.cpp
+│   │   │   ├── LyraBoundActionButton.h
+│   │   │   ├── LyraListView.cpp
+│   │   │   ├── LyraListView.h
+│   │   │   ├── LyraTabButtonBase.cpp
+│   │   │   ├── LyraTabButtonBase.h
+│   │   │   ├── LyraTabListWidgetBase.cpp
+│   │   │   ├── LyraTabListWidgetBase.h
+│   │   │   ├── LyraWidgetFactory.cpp
+│   │   │   ├── LyraWidgetFactory.h
+│   │   │   ├── LyraWidgetFactory_Class.cpp
+│   │   │   └── LyraWidgetFactory_Class.h
+│   │   ├── Foundation/
+│   │   │   ├── LyraActionWidget.cpp
+│   │   │   ├── LyraActionWidget.h
+│   │   │   ├── LyraButtonBase.cpp
+│   │   │   ├── LyraButtonBase.h
+│   │   │   ├── LyraConfirmationScreen.cpp
+│   │   │   ├── LyraConfirmationScreen.h
+│   │   │   ├── LyraControllerDisconnectedScreen.cpp
+│   │   │   ├── LyraControllerDisconnectedScreen.h
+│   │   │   ├── LyraLoadingScreenSubsystem.cpp
+│   │   │   └── LyraLoadingScreenSubsystem.h
+│   │   ├── Frontend/
+│   │   │   ├── ApplyFrontendPerfSettingsAction.cpp
+│   │   │   ├── ApplyFrontendPerfSettingsAction.h
+│   │   │   ├── LyraFrontendStateComponent.cpp
+│   │   │   ├── LyraFrontendStateComponent.h
+│   │   │   ├── LyraLobbyBackground.cpp
+│   │   │   └── LyraLobbyBackground.h
+│   │   ├── IndicatorSystem/
+│   │   │   ├── IActorIndicatorWidget.h
+│   │   │   ├── IndicatorDescriptor.cpp
+│   │   │   ├── IndicatorDescriptor.h
+│   │   │   ├── IndicatorLayer.cpp
+│   │   │   ├── IndicatorLayer.h
+│   │   │   ├── IndicatorLibrary.cpp
+│   │   │   ├── IndicatorLibrary.h
+│   │   │   ├── LyraIndicatorManagerComponent.cpp
+│   │   │   ├── LyraIndicatorManagerComponent.h
+│   │   │   ├── SActorCanvas.cpp
+│   │   │   └── SActorCanvas.h
+│   │   ├── PerformanceStats/
+│   │   │   ├── LyraPerfStatContainerBase.cpp
+│   │   │   ├── LyraPerfStatContainerBase.h
+│   │   │   ├── LyraPerfStatWidgetBase.cpp
+│   │   │   └── LyraPerfStatWidgetBase.h
+│   │   ├── Subsystem/
+│   │   │   ├── LyraUIManagerSubsystem.cpp
+│   │   │   ├── LyraUIManagerSubsystem.h
+│   │   │   ├── LyraUIMessaging.cpp
+│   │   │   └── LyraUIMessaging.h
+│   │   ├── Weapons/
+│   │   │   ├── CircumferenceMarkerWidget.cpp
+│   │   │   ├── CircumferenceMarkerWidget.h
+│   │   │   ├── HitMarkerConfirmationWidget.cpp
+│   │   │   ├── HitMarkerConfirmationWidget.h
+│   │   │   ├── LyraReticleWidgetBase.cpp
+│   │   │   ├── LyraReticleWidgetBase.h
+│   │   │   ├── LyraWeaponUserInterface.cpp
+│   │   │   ├── LyraWeaponUserInterface.h
+│   │   │   ├── SCircumferenceMarkerWidget.cpp
+│   │   │   ├── SCircumferenceMarkerWidget.h
+│   │   │   ├── SHitMarkerConfirmationWidget.cpp
+│   │   │   └── SHitMarkerConfirmationWidget.h
+│   │   ├── LyraActivatableWidget.cpp
+│   │   ├── LyraActivatableWidget.h
+│   │   ├── LyraGameViewportClient.cpp
+│   │   ├── LyraGameViewportClient.h
+│   │   ├── LyraHUD.cpp
+│   │   ├── LyraHUD.h
+│   │   ├── LyraHUDLayout.cpp
+│   │   ├── LyraHUDLayout.h
+│   │   ├── LyraJoystickWidget.cpp
+│   │   ├── LyraJoystickWidget.h
+│   │   ├── LyraSettingScreen.cpp
+│   │   ├── LyraSettingScreen.h
+│   │   ├── LyraSimulatedInputWidget.cpp
+│   │   ├── LyraSimulatedInputWidget.h
+│   │   ├── LyraTaggedWidget.cpp
+│   │   ├── LyraTaggedWidget.h
+│   │   ├── LyraTouchRegion.cpp
+│   │   └── LyraTouchRegion.h
+│   ├── Weapons/
+│   │   ├── InventoryFragment_ReticleConfig.cpp
+│   │   ├── InventoryFragment_ReticleConfig.h
+│   │   ├── LyraDamageLogDebuggerComponent.cpp
+│   │   ├── LyraDamageLogDebuggerComponent.h
+│   │   ├── LyraGameplayAbility_RangedWeapon.cpp
+│   │   ├── LyraGameplayAbility_RangedWeapon.h
+│   │   ├── LyraRangedWeaponInstance.cpp
+│   │   ├── LyraRangedWeaponInstance.h
+│   │   ├── LyraWeaponDebugSettings.cpp
+│   │   ├── LyraWeaponDebugSettings.h
+│   │   ├── LyraWeaponInstance.cpp
+│   │   ├── LyraWeaponInstance.h
+│   │   ├── LyraWeaponSpawner.cpp
+│   │   ├── LyraWeaponSpawner.h
+│   │   ├── LyraWeaponStateComponent.cpp
+│   │   └── LyraWeaponStateComponent.h
+│   ├── LyraGameModule.cpp
+│   ├── LyraGameplayTags.cpp
+│   ├── LyraGameplayTags.h
+│   ├── LyraLogChannels.cpp
+│   ├── LyraLogChannels.h

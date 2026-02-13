@@ -1,0 +1,60 @@
+// Copyright 2024 Huagang Liu. All Rights Reserved.
+
+#include "GyraGameplayAbility_Reset.h"
+
+#include "GyraAbilitySystemComponent.h"
+#include "GyraCharacter.h"
+#include "GameFramework/GameplayMessageSubsystem.h"
+#include "GyraGameplayTags.h"
+
+#include UE_INLINE_GENERATED_CPP_BY_NAME(GyraGameplayAbility_Reset)
+
+UGyraGameplayAbility_Reset::UGyraGameplayAbility_Reset(const FObjectInitializer& ObjectInitializer)
+	: Super(ObjectInitializer)
+{
+	InstancingPolicy = EGameplayAbilityInstancingPolicy::InstancedPerActor;
+	NetExecutionPolicy = EGameplayAbilityNetExecutionPolicy::ServerInitiated;
+
+	if (HasAnyFlags(RF_ClassDefaultObject))
+	{
+		// Add the ability trigger tag as default to the CDO.
+		FAbilityTriggerData TriggerData;
+		TriggerData.TriggerTag = GyraGameplayTags::GameplayEvent_RequestReset;
+		TriggerData.TriggerSource = EGameplayAbilityTriggerSource::GameplayEvent;
+		AbilityTriggers.Add(TriggerData);
+	}
+}
+
+void UGyraGameplayAbility_Reset::ActivateAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo, const FGameplayEventData* TriggerEventData)
+{
+	check(ActorInfo);
+
+	UGyraAbilitySystemComponent* GyraASC = CastChecked<UGyraAbilitySystemComponent>(ActorInfo->AbilitySystemComponent.Get());
+
+	FGameplayTagContainer AbilityTypesToIgnore;
+	AbilityTypesToIgnore.AddTag(GyraGameplayTags::Ability_Behavior_SurvivesDeath);
+
+	// Cancel all abilities and block others from starting.
+	GyraASC->CancelAbilities(nullptr, &AbilityTypesToIgnore, this);
+
+	SetCanBeCanceled(false);
+
+	// Execute the reset from the character
+	if (AGyraCharacter* GyraChar = Cast<AGyraCharacter>(CurrentActorInfo->AvatarActor.Get()))
+	{
+		GyraChar->Reset();
+	}
+
+	// Let others know a reset has occurred
+	FGyraPlayerResetMessage Message;
+	Message.OwnerPlayerState = CurrentActorInfo->OwnerActor.Get();
+	UGameplayMessageSubsystem& MessageSystem = UGameplayMessageSubsystem::Get(this);
+	MessageSystem.BroadcastMessage(GyraGameplayTags::GameplayEvent_Reset, Message);
+
+	Super::ActivateAbility(Handle, ActorInfo, ActivationInfo, TriggerEventData);
+
+	const bool bReplicateEndAbility = true;
+	const bool bWasCanceled = false;
+	EndAbility(CurrentSpecHandle, CurrentActorInfo, CurrentActivationInfo, bReplicateEndAbility, bWasCanceled);
+}
+

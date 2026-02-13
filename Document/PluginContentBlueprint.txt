@@ -1,0 +1,1377 @@
+插件目录蓝图结构: Plugins/
+├── AsyncMixin/
+│   ├── Source/
+│   │   ├── Private/
+│   │   ├── Public/
+├── CommonGame/
+│   ├── Source/
+│   │   ├── Private/
+│   │   │   ├── Actions/
+│   │   │   ├── Messaging/
+│   │   ├── Public/
+│   │   │   ├── Actions/
+│   │   │   ├── Messaging/
+├── CommonLoadingScreen/
+│   ├── Resources/
+│   ├── Source/
+│   │   ├── CommonLoadingScreen/
+│   │   │   ├── Private/
+│   │   │   ├── Public/
+│   │   └── CommonStartupLoadingScreen/
+│   │       ├── Private/
+├── CommonUser/
+│   ├── Resources/
+│   ├── Source/
+│   │   └── CommonUser/
+│   │       ├── Private/
+│   │       ├── Public/
+├── GameFeatures/
+│   ├── ShooterCore/
+│   │   ├── Config/
+│   │   │   └── Tags/
+│   │   ├── Content/
+│   │   │   ├── Accolades/
+│   │   │   │   ├── AccoladeDataRegistry.uasset
+│   │   │   │   ├── B_AccoladeRelay.uasset
+│   │   │   │   ├── B_ElimChainProcessor.uasset
+│   │   │   │   ├── B_ElimStreakProcessor.uasset
+│   │   │   │   ├── B_EliminationFeedRelay.uasset
+│   │   │   │   ├── DT_BasicShooterAccolades.uasset
+│   │   │   │   └── EAS_BasicShooterAcolades.uasset
+│   │   │   ├── Blueprint/
+│   │   │   │   ├── Macros/
+│   │   │   │   │   └── BPML_VFXMacros.uasset
+│   │   │   │   ├── B_AbilitySpawner.uasset
+│   │   │   │   ├── B_AimAssistTargetTest.uasset
+│   │   │   │   ├── B_ControlPointVolume.uasset
+│   │   │   │   ├── B_GrantAbilityPad_ApplyGE.uasset
+│   │   │   │   ├── B_GrantInventoryPad_WithMesh.uasset
+│   │   │   │   ├── B_GrantInventory_Pad.uasset
+│   │   │   │   ├── B_Launcher.uasset
+│   │   │   │   ├── B_Launcher_Push.uasset
+│   │   │   │   ├── B_Launcher_Up.uasset
+│   │   │   │   ├── B_PerfTestActor.uasset
+│   │   │   │   ├── B_PerfTestSpawner.uasset
+│   │   │   │   ├── B_Teleport.uasset
+│   │   │   │   ├── B_WeaponSpawner.uasset
+│   │   │   │   └── SM_XFacingCylinderUnit1.uasset
+│   │   │   ├── Bot/
+│   │   │   │   ├── BT/
+│   │   │   │   │   ├── BB_Lyra_Shooter_Bot.uasset
+│   │   │   │   │   ├── BTDecorator_AllowedToFire.uasset
+│   │   │   │   │   └── BT_Lyra_Shooter_Bot.uasset
+│   │   │   │   ├── EQS/
+│   │   │   │   │   ├── Context/
+│   │   │   │   │   │   ├── EQS_Context_ControlPoints.uasset
+│   │   │   │   │   │   ├── EQS_Context_TargetEnemy.uasset
+│   │   │   │   │   │   └── EQS_Context_WeaponCheck.uasset
+│   │   │   │   │   ├── Generator/
+│   │   │   │   │   │   └── EQS_GetAllEnemy.uasset
+│   │   │   │   │   ├── EQS_AIPerceptionEnemy.uasset
+│   │   │   │   │   ├── EQS_FindControlPoint.uasset
+│   │   │   │   │   ├── EQS_FindTarget.uasset
+│   │   │   │   │   ├── EQS_FindWeapon.uasset
+│   │   │   │   │   └── EQS_MoveAgainstEnnemy.uasset
+│   │   │   │   ├── Services/
+│   │   │   │   │   ├── BTS_CheckAmmo.uasset
+│   │   │   │   │   ├── BTS_ReloadWeapon.uasset
+│   │   │   │   │   ├── BTS_SetFocus.uasset
+│   │   │   │   │   └── BTS_Shoot.uasset
+│   │   │   │   ├── B_AI_Controller_LyraShooter.uasset
+│   │   │   │   ├── B_AI_Controller_LyraShooter_Passive.uasset
+│   │   │   │   ├── B_ShooterBotSpawner.uasset
+│   │   │   │   ├── B_ShooterBotSpawner_Perf.uasset
+│   │   │   │   └── EQS_Tester.uasset
+│   │   │   ├── Camera/
+│   │   │   │   ├── CM_ThirdPersonADS.uasset
+│   │   │   │   └── ThirdPersonADSOffsetCurve.uasset
+│   │   │   ├── ControlPoint/
+│   │   │   │   ├── AI/
+│   │   │   │   │   ├── BT_Lyra_Shooter_ControlPoint_Bot.uasset
+│   │   │   │   │   ├── B_AI_Controller_LyraShooter_ControlPoint.uasset
+│   │   │   │   │   └── B_ShooterBotSpawner_ControlPoint.uasset
+│   │   │   │   ├── UI/
+│   │   │   │   │   ├── W_CPScoreWidget.uasset
+│   │   │   │   │   ├── W_ControlPointMarker.uasset
+│   │   │   │   │   ├── W_ControlPointStatusWidget.uasset
+│   │   │   │   │   ├── W_MatchScoreBoard_CP.uasset
+│   │   │   │   │   ├── W_SB_PlayerRow_CP.uasset
+│   │   │   │   │   └── W_ScoreBoard_HeaderRow_CP.uasset
+│   │   │   │   ├── AbilitySet_ControlPoint.uasset
+│   │   │   │   ├── B_ControlPointScoring.uasset
+│   │   │   │   ├── B_MusicManagerComponent_ControlPoint.uasset
+│   │   │   │   └── GA_ShowLeaderboard_CP.uasset
+│   │   │   ├── Effects/
+│   │   │   │   ├── Environmental/
+│   │   │   │   │   ├── NS_CapturePoint.uasset
+│   │   │   │   │   └── NS_CapturePointCounter.uasset
+│   │   │   │   ├── Material/
+│   │   │   │   │   ├── MI_WeaponSpawnerTimerIndicator.uasset
+│   │   │   │   │   ├── MT_BlackBorder.uasset
+│   │   │   │   │   ├── MT_CP_Bar.uasset
+│   │   │   │   │   ├── MT_ControlPoint.uasset
+│   │   │   │   │   ├── M_CP.uasset
+│   │   │   │   │   ├── M_GrenadeRadius.uasset
+│   │   │   │   │   ├── M_Launcher.uasset
+│   │   │   │   │   ├── M_Launcher_Inst.uasset
+│   │   │   │   │   ├── M_Launcher_Inst1.uasset
+│   │   │   │   │   ├── M_Launcher_Inst1_2.uasset
+│   │   │   │   │   ├── M_Launcher_Inst1_3.uasset
+│   │   │   │   │   ├── M_Launcher_Inst1_4.uasset
+│   │   │   │   │   ├── M_Launcher_Inst2.uasset
+│   │   │   │   │   ├── M_Launcher_Inst3.uasset
+│   │   │   │   │   ├── M_Launcher_Inst4.uasset
+│   │   │   │   │   ├── M_Launcher_Inst5.uasset
+│   │   │   │   │   ├── M_Launcher_Inst6.uasset
+│   │   │   │   │   ├── M_PadColor.uasset
+│   │   │   │   │   └── M_WeaponSpawnTimerIndicator.uasset
+│   │   │   │   └── Mesh/
+│   │   │   │       └── capturepoint_ring_corner.uasset
+│   │   │   ├── Elimination/
+│   │   │   │   ├── UI/
+│   │   │   │   │   ├── W_MatchScoreBoard_Elimination.uasset
+│   │   │   │   │   ├── W_SB_PlayerRow_TDM.uasset
+│   │   │   │   │   ├── W_ScoreBoard_HeaderRow_EliminationMode.uasset
+│   │   │   │   │   └── W_ScoreWidget_Elimination.uasset
+│   │   │   │   ├── AbilitySet_Elimination.uasset
+│   │   │   │   ├── B_MusicManagerComponent_Elimination.uasset
+│   │   │   │   ├── B_TeamDeathMatchScoring.uasset
+│   │   │   │   └── GA_ShowLeaderboard_TDM.uasset
+│   │   │   ├── Experiences/
+│   │   │   │   ├── Phases/
+│   │   │   │   │   ├── GE_DamageImmunity_FromGameMode.uasset
+│   │   │   │   │   ├── GE_PregameLobby.uasset
+│   │   │   │   │   ├── Phase_Playing.uasset
+│   │   │   │   │   ├── Phase_PostGame.uasset
+│   │   │   │   │   └── Phase_Warmup.uasset
+│   │   │   │   ├── B_LyraShooterGame_ControlPoints.uasset
+│   │   │   │   ├── B_ShooterGame_Elimination.uasset
+│   │   │   │   ├── B_ShooterGame_Perf.uasset
+│   │   │   │   ├── LAS_ShooterGame_SharedInput.uasset
+│   │   │   │   ├── LAS_ShooterGame_StandardComponents.uasset
+│   │   │   │   └── LAS_ShooterGame_StandardHUD.uasset
+│   │   │   ├── Game/
+│   │   │   │   ├── Dash/
+│   │   │   │   │   ├── GA_Hero_Dash.uasset
+│   │   │   │   │   ├── W_DashCooldown.uasset
+│   │   │   │   │   └── W_DashTouchButton.uasset
+│   │   │   │   ├── Emote/
+│   │   │   │   │   ├── GA_Emote.uasset
+│   │   │   │   │   └── W_EmoteTouchButton.uasset
+│   │   │   │   ├── Melee/
+│   │   │   │   │   ├── GA_Melee.uasset
+│   │   │   │   │   └── W_MeleeTouchButton.uasset
+│   │   │   │   ├── Respawn/
+│   │   │   │   │   ├── GA_AutoRespawn.uasset
+│   │   │   │   │   ├── GA_SpawnEffect.uasset
+│   │   │   │   │   ├── GE_SpawnIn.uasset
+│   │   │   │   │   └── W_RespawnTimer.uasset
+│   │   │   │   ├── AbilitySet_ShooterHero.uasset
+│   │   │   │   ├── B_HandleShooterReplays.uasset
+│   │   │   │   ├── B_Hero_ShooterMannequin.uasset
+│   │   │   │   ├── B_QuickBarComponent.uasset
+│   │   │   │   ├── B_ShooterGameScoring_Base.uasset
+│   │   │   │   ├── B_TeamColor_DeviceProperty.uasset
+│   │   │   │   ├── B_TeamSetup_TwoTeams.uasset
+│   │   │   │   ├── B_TeamSpawningRules.uasset
+│   │   │   │   ├── GA_QuickbarSlots.uasset
+│   │   │   │   ├── HeroData_ShooterGame.uasset
+│   │   │   │   └── TagRelationships_ShooterHero.uasset
+│   │   │   ├── GameplayCues/
+│   │   │   │   ├── GCNL_Dash.uasset
+│   │   │   │   ├── GCNL_Death.uasset
+│   │   │   │   ├── GCNL_Launcher_Activate.uasset
+│   │   │   │   ├── GCNL_MatchDecided.uasset
+│   │   │   │   ├── GCNL_Spawning.uasset
+│   │   │   │   ├── GCNL_Teleporter_Activate.uasset
+│   │   │   │   ├── GCNL_WaitingForPlayers.uasset
+│   │   │   │   ├── GCN_InteractPickUp.uasset
+│   │   │   │   ├── GCN_Weapon_Melee.uasset
+│   │   │   │   ├── GCN_Weapon_MeleeImpact.uasset
+│   │   │   │   ├── W_MatchDecided_Message.uasset
+│   │   │   │   └── W_WaitingForPlayers_Message.uasset
+│   │   │   ├── Input/
+│   │   │   │   ├── Abilities/
+│   │   │   │   │   ├── GAB_ShowWidget_WhenInputPressed.uasset
+│   │   │   │   │   ├── GAB_ShowWidget_WhileInputHeld.uasset
+│   │   │   │   │   ├── GA_ADS.uasset
+│   │   │   │   │   ├── GA_DropWeapon.uasset
+│   │   │   │   │   ├── GA_Grenade.uasset
+│   │   │   │   │   └── Struct_UIMessaging.uasset
+│   │   │   │   ├── Actions/
+│   │   │   │   │   ├── IA_ADS.uasset
+│   │   │   │   │   ├── IA_DropWeapon.uasset
+│   │   │   │   │   ├── IA_Emote.uasset
+│   │   │   │   │   ├── IA_Grenade.uasset
+│   │   │   │   │   ├── IA_Melee.uasset
+│   │   │   │   │   ├── IA_QuickSlot1.uasset
+│   │   │   │   │   ├── IA_QuickSlot2.uasset
+│   │   │   │   │   ├── IA_QuickSlot3.uasset
+│   │   │   │   │   ├── IA_QuickSlot_CycleBackward.uasset
+│   │   │   │   │   ├── IA_QuickSlot_CycleForward.uasset
+│   │   │   │   │   ├── IA_ShowScoreboard.uasset
+│   │   │   │   │   └── InputData_ShooterGame_AddOns.uasset
+│   │   │   │   ├── Components/
+│   │   │   │   │   └── B_AimAssistTargetManager.uasset
+│   │   │   │   ├── Mappings/
+│   │   │   │   │   ├── C_AimAssistTargetWeightCurve.uasset
+│   │   │   │   │   ├── IMC_ADS_Speed.uasset
+│   │   │   │   │   ├── IMC_ShooterGame.uasset
+│   │   │   │   │   └── IMC_ShooterGame_KBM.uasset
+│   │   │   │   ├── Settings/
+│   │   │   │   │   └── GamepadAimSensitivity_Targeting.uasset
+│   │   │   │   └── W_TouchRegion_Left.uasset
+│   │   │   ├── Item/
+│   │   │   │   ├── B_CubeHat.uasset
+│   │   │   │   └── B_HealPickup.uasset
+│   │   │   ├── Items/
+│   │   │   │   ├── HealthPickup/
+│   │   │   │   │   ├── GE_InstantHeal_Big.uasset
+│   │   │   │   │   ├── GE_InstantHeal_Part.uasset
+│   │   │   │   │   ├── GE_InstantHeal_Pickup.uasset
+│   │   │   │   │   ├── WeaponPickupData_Heal_Big.uasset
+│   │   │   │   │   └── WeaponPickupData_Heal_Small.uasset
+│   │   │   │   ├── HealthPickup_Unused/
+│   │   │   │   │   ├── AbilitySet_HealPickup.uasset
+│   │   │   │   │   ├── GA_HealPickup.uasset
+│   │   │   │   │   ├── ID_HealPickup.uasset
+│   │   │   │   │   └── WID_HealPickup.uasset
+│   │   │   │   └── PhysicsCube/
+│   │   │   │       ├── B_PhysicsTest.uasset
+│   │   │   │       ├── MI_PhysicsTest.uasset
+│   │   │   │       └── SM_1M_Cube.uasset
+│   │   │   ├── Maps/
+│   │   │   │   ├── L_ShooterGym.umap
+│   │   │   │   └── L_ShooterPerf.umap
+│   │   │   ├── System/
+│   │   │   │   ├── Audio/
+│   │   │   │   │   └── WeaponAudioFunctions.uasset
+│   │   │   │   └── Playlists/
+│   │   │   │       ├── DA_ShooterGame_ShooterGym.uasset
+│   │   │   │       └── DA_ShooterGame_ShooterPerf.uasset
+│   │   │   ├── UserInterface/
+│   │   │   │   ├── HUD/
+│   │   │   │   │   ├── MI_UI_AmmoArc.uasset
+│   │   │   │   │   ├── M_UI_RadialProgress_Ability.uasset
+│   │   │   │   │   ├── W_AbilityFailureFeedback.uasset
+│   │   │   │   │   ├── W_AbilityProgress.uasset
+│   │   │   │   │   ├── W_DebugWeaponSpreadWidget.uasset
+│   │   │   │   │   ├── W_QuickBar.uasset
+│   │   │   │   │   ├── W_QuickBarSlot.uasset
+│   │   │   │   │   ├── W_Reticle_AmmoBar.uasset
+│   │   │   │   │   ├── W_Temp_ReticleDot.uasset
+│   │   │   │   │   ├── W_WeaponAmmoAndName.uasset
+│   │   │   │   │   └── W_WeaponReticleHost.uasset
+│   │   │   │   ├── Notifications/
+│   │   │   │   │   ├── Accolades/
+│   │   │   │   │   │   ├── W_AccoladeHostWidget.uasset
+│   │   │   │   │   │   └── W_AccoladeToast.uasset
+│   │   │   │   │   └── EliminationFeed/
+│   │   │   │   │       ├── ElimFeedEntry.uasset
+│   │   │   │   │       ├── EliminationFeedMessage.uasset
+│   │   │   │   │       ├── W_EliminationFeed.uasset
+│   │   │   │   │       └── W_EliminationFeedEntryWidget.uasset
+│   │   │   │   ├── Replays/
+│   │   │   │   │   ├── W_Replay_PlayerSelector.uasset
+│   │   │   │   │   ├── W_Replay_ScrubBar.uasset
+│   │   │   │   │   └── W_ShooterReplayHUD.uasset
+│   │   │   │   ├── ScoreBoard/
+│   │   │   │   │   ├── PlayerRow/
+│   │   │   │   │   │   ├── W_BasePlayerRow.uasset
+│   │   │   │   │   │   ├── W_SB_PlayerIcon.uasset
+│   │   │   │   │   │   ├── W_SB_PlayerName.uasset
+│   │   │   │   │   │   └── W_SB_PlayerStat.uasset
+│   │   │   │   │   ├── W_SB_PlayerList.uasset
+│   │   │   │   │   ├── W_SB_TeamStat.uasset
+│   │   │   │   │   └── W_UserConnectionStatus.uasset
+│   │   │   │   ├── ITakesLyraPlayerState.uasset
+│   │   │   │   ├── W_FireButton.uasset
+│   │   │   │   ├── W_ShooterHUDLayout.uasset
+│   │   │   │   └── W_ToggleADSTouchButton.uasset
+│   │   │   ├── Weapon/
+│   │   │   │   └── Grenade/
+│   │   │   │       └── B_Grenade.uasset
+│   │   │   ├── Weapons/
+│   │   │   │   ├── Grenade/
+│   │   │   │   │   ├── Curve_GrenadeDamage.uasset
+│   │   │   │   │   ├── GCN_Grenade_Detonate.uasset
+│   │   │   │   │   ├── GE_Damage_Grenade.uasset
+│   │   │   │   │   ├── GE_Grenade_Cooldown.uasset
+│   │   │   │   │   └── W_GrenadeCooldown.uasset
+│   │   │   │   ├── NetShooter_PROTO/
+│   │   │   │   │   ├── AbilitySet_ShooterNetShooter.uasset
+│   │   │   │   │   ├── B_NetShooter.uasset
+│   │   │   │   │   ├── B_WeaponInstance_NetShooter.uasset
+│   │   │   │   │   ├── GA_WeaponNetShooter.uasset
+│   │   │   │   │   ├── ID_NetShooter.uasset
+│   │   │   │   │   ├── WID_NetShooter.uasset
+│   │   │   │   │   └── WeaponPickupData_NetShooter.uasset
+│   │   │   │   ├── Pistol/
+│   │   │   │   │   ├── AbilitySet_ShooterPistol.uasset
+│   │   │   │   │   ├── B_Pistol.uasset
+│   │   │   │   │   ├── B_WeaponInstance_Pistol.uasset
+│   │   │   │   │   ├── GA_Weapon_Fire_Pistol.uasset
+│   │   │   │   │   ├── GCN_Weapon_Pistol_Fire.uasset
+│   │   │   │   │   ├── ID_Pistol.uasset
+│   │   │   │   │   ├── WID_Pistol.uasset
+│   │   │   │   │   ├── W_AmmoCounter_Pistol.uasset
+│   │   │   │   │   ├── W_Reticle_Pistol.uasset
+│   │   │   │   │   └── WeaponPickupData_Pistol.uasset
+│   │   │   │   ├── Rifle/
+│   │   │   │   │   ├── AbilitySet_ShooterRifle.uasset
+│   │   │   │   │   ├── B_Rifle.uasset
+│   │   │   │   │   ├── B_WeaponInstance_Rifle.uasset
+│   │   │   │   │   ├── GA_Weapon_Fire_Rifle_Auto.uasset
+│   │   │   │   │   ├── GA_Weapon_Reload_Rifle.uasset
+│   │   │   │   │   ├── GCN_Weapon_Rifle_Fire.uasset
+│   │   │   │   │   ├── GE_Damage_RifleAuto.uasset
+│   │   │   │   │   ├── ID_Rifle.uasset
+│   │   │   │   │   ├── WID_Rifle.uasset
+│   │   │   │   │   ├── W_AmmoCounter_Rifle.uasset
+│   │   │   │   │   ├── W_Reticle_Rifle.uasset
+│   │   │   │   │   └── WeaponPickupData_Rifle.uasset
+│   │   │   │   ├── Shotgun/
+│   │   │   │   │   ├── AbilitySet_ShooterShotgun.uasset
+│   │   │   │   │   ├── B_Shotgun.uasset
+│   │   │   │   │   ├── B_WeaponInstance_Shotgun.uasset
+│   │   │   │   │   ├── GA_Weapon_Fire_Shotgun.uasset
+│   │   │   │   │   ├── GA_Weapon_Reload_NetShooter.uasset
+│   │   │   │   │   ├── GA_Weapon_Reload_Shotgun.uasset
+│   │   │   │   │   ├── GCN_Weapon_Shotgun_Fire.uasset
+│   │   │   │   │   ├── GE_Damage_Shotgun.uasset
+│   │   │   │   │   ├── ID_Shotgun.uasset
+│   │   │   │   │   ├── WID_Shotgun.uasset
+│   │   │   │   │   ├── W_AmmoCounter_Shotgun.uasset
+│   │   │   │   │   ├── W_Reticle_Shotgun.uasset
+│   │   │   │   │   └── WeaponPickupData_Shotgun.uasset
+│   │   │   │   ├── B_WeaponInstance_Base.uasset
+│   │   │   │   ├── GE_Damage_Melee.uasset
+│   │   │   │   └── WID_InstantHeal.uasset
+│   │   │   └── ShooterCore.uasset
+│   │   ├── Resources/
+│   │   ├── Source/
+│   │   │   └── ShooterCoreRuntime/
+│   │   │       ├── Private/
+│   │   │       │   ├── Accolades/
+│   │   │       │   ├── Input/
+│   │   │       │   ├── MessageProcessors/
+│   │   │       ├── Public/
+│   │   │       │   ├── Accolades/
+│   │   │       │   ├── Input/
+│   │   │       │   ├── MessageProcessors/
+│   │   │       │   ├── Messages/
+│   ├── ShooterExplorer/
+│   │   ├── Config/
+│   │   │   └── Tags/
+│   │   ├── Content/
+│   │   │   ├── AI/
+│   │   │   │   ├── BehaviorTrees/
+│   │   │   │   │   ├── BB/
+│   │   │   │   │   │   └── BB_UseSmartObject.uasset
+│   │   │   │   │   ├── EnvQueries/
+│   │   │   │   │   │   └── EQS_FindSmartObjects_Emote.uasset
+│   │   │   │   │   ├── Tasks/
+│   │   │   │   │   │   ├── BTT_FindAndClaimSmartObject.uasset
+│   │   │   │   │   │   ├── BTT_GotoSmartObject.uasset
+│   │   │   │   │   │   ├── BTT_ReleaseSmartObject.uasset
+│   │   │   │   │   │   ├── BTT_UseSmartObject.uasset
+│   │   │   │   │   │   └── BTT_UseSmartObject_2.uasset
+│   │   │   │   │   └── BT_UseSmartObject.uasset
+│   │   │   │   ├── SmartObjects/
+│   │   │   │   │   ├── CAS_Data/
+│   │   │   │   │   │   ├── CASR_1Char_1Obj.uasset
+│   │   │   │   │   │   ├── CASR_2Char_1Obj.uasset
+│   │   │   │   │   │   ├── CAS_Bench.uasset
+│   │   │   │   │   │   ├── L_CAS_Bench.uasset
+│   │   │   │   │   │   └── L_CAS_Boombox.uasset
+│   │   │   │   │   ├── Definition/
+│   │   │   │   │   │   ├── L_SOD_Bench_01.uasset
+│   │   │   │   │   │   ├── L_SOD_Bench_02.uasset
+│   │   │   │   │   │   ├── L_SOD_BoomBox.uasset
+│   │   │   │   │   │   ├── L_SOD_EmotePad.uasset
+│   │   │   │   │   │   └── L_SOD_SimpleBench_01.uasset
+│   │   │   │   │   ├── Parents/
+│   │   │   │   │   │   └── BP_SOActor_Parent_Actor.uasset
+│   │   │   │   │   ├── StateTrees/
+│   │   │   │   │   │   ├── L_SOST_BoomBox.uasset
+│   │   │   │   │   │   ├── L_SOST_Emote.uasset
+│   │   │   │   │   │   ├── L_SOST_IntroLoopOutro.uasset
+│   │   │   │   │   │   └── L_SOST_SimpleCAS.uasset
+│   │   │   │   │   ├── BP_SOActor_Bench.uasset
+│   │   │   │   │   ├── BP_SOActor_Bench_01.uasset
+│   │   │   │   │   ├── BP_SOActor_Bench_02.uasset
+│   │   │   │   │   ├── BP_SOActor_BoomBox.uasset
+│   │   │   │   │   ├── BP_SOActor_EmoteDance_01.uasset
+│   │   │   │   │   ├── BP_SOActor_EmotePad_01.uasset
+│   │   │   │   │   └── BP_SOActor_SimpleCASBench_01.uasset
+│   │   │   │   ├── StateTrees/
+│   │   │   │   │   ├── Evaluators/
+│   │   │   │   │   │   └── EV_PlayerPosition.uasset
+│   │   │   │   │   ├── Tasks/
+│   │   │   │   │   │   ├── STT_FindAndClaimSmartObject.uasset
+│   │   │   │   │   │   ├── STT_Follow.uasset
+│   │   │   │   │   │   ├── STT_GetPlayerLocation.uasset
+│   │   │   │   │   │   ├── STT_GetSlotLocation.uasset
+│   │   │   │   │   │   ├── STT_GoTo.uasset
+│   │   │   │   │   │   ├── STT_GoToAndUseSmartObject.uasset
+│   │   │   │   │   │   ├── STT_GoTo_SmartObject.uasset
+│   │   │   │   │   │   ├── STT_PickRandomMontage.uasset
+│   │   │   │   │   │   ├── STT_PlayAnimMontage.uasset
+│   │   │   │   │   │   ├── STT_PlayAnimMontage1.uasset
+│   │   │   │   │   │   ├── STT_PlayRandomAnimMontage.uasset
+│   │   │   │   │   │   ├── STT_ReleaseSmartObject.uasset
+│   │   │   │   │   │   ├── STT_SimpleDebugDelays.uasset
+│   │   │   │   │   │   └── STT_UseSmartObject.uasset
+│   │   │   │   │   └── Trees/
+│   │   │   │   │       ├── L_STT_FollowPlayer.uasset
+│   │   │   │   │       ├── L_STT_TestStates.uasset
+│   │   │   │   │       └── L_STT_UseSmartObject.uasset
+│   │   │   │   └── UnrealFestDemo/
+│   │   │   │       ├── L_DemoBench.uasset
+│   │   │   │       ├── L_DemoDefinition.uasset
+│   │   │   │       ├── L_DemoTree.uasset
+│   │   │   │       ├── L_UnrealFestDemoMap.umap
+│   │   │   │       └── L_UnrealFestShowcaseMap.umap
+│   │   │   ├── Blueprint/
+│   │   │   │   ├── BP_BoomBox.uasset
+│   │   │   │   ├── BP_GameplayEffectPad_SpawnFollowHero.uasset
+│   │   │   │   ├── BP_PadToggle_DataLayer.uasset
+│   │   │   │   ├── BP_PadToggle_SmartObject.uasset
+│   │   │   │   ├── B_Hero_Explorer.uasset
+│   │   │   │   ├── B_Pawn_Explorer.uasset
+│   │   │   │   ├── B_SimpleFollowPawn.uasset
+│   │   │   │   └── B_SimpleFollowPawn_Big.uasset
+│   │   │   ├── Game/
+│   │   │   │   └── HeroData_Explorer.uasset
+│   │   │   ├── Input/
+│   │   │   │   ├── Abilities/
+│   │   │   │   │   ├── AbilitySet_InventoryTest.uasset
+│   │   │   │   │   ├── GA_Interact.uasset
+│   │   │   │   │   ├── GA_ToggleInventory.uasset
+│   │   │   │   │   ├── GA_ToggleMap.uasset
+│   │   │   │   │   └── GA_ToggleMarkerInWorld.uasset
+│   │   │   │   ├── Actions/
+│   │   │   │   │   ├── IA_Interact.uasset
+│   │   │   │   │   ├── IA_ToggleInventory.uasset
+│   │   │   │   │   ├── IA_ToggleMap.uasset
+│   │   │   │   │   ├── IA_ToggleMarkerInWorld.uasset
+│   │   │   │   │   └── InputData_InventoryTest.uasset
+│   │   │   │   └── Mappings/
+│   │   │   │       └── IMC_InventoryTest.uasset
+│   │   │   ├── Interact/
+│   │   │   │   ├── GA_Interaction_Collect.uasset
+│   │   │   │   └── GA_Interaction_Sit.uasset
+│   │   │   ├── Items/
+│   │   │   │   ├── B_InteractableChair.uasset
+│   │   │   │   ├── B_InteractableRock.uasset
+│   │   │   │   ├── TestID_Rock.uasset
+│   │   │   │   └── TestID_Tree.uasset
+│   │   │   ├── Maps/
+│   │   │   │   ├── L_InteractionTestMap.umap
+│   │   │   │   ├── L_InventoryTestMap.umap
+│   │   │   │   ├── L_SmartObjects_TestMap.umap
+│   │   │   │   └── L_StateTree_FollowTest.umap
+│   │   │   ├── Meshes/
+│   │   │   │   ├── Gyms/
+│   │   │   │   │   ├── SM_ModuleA_090.uasset
+│   │   │   │   │   ├── SM_NavCube.uasset
+│   │   │   │   │   ├── SM_Railing_010.uasset
+│   │   │   │   │   └── SM_stairs_1.uasset
+│   │   │   │   └── Prop/
+│   │   │   │       └── Kit_bench_RR/
+│   │   │   │           ├── Material/
+│   │   │   │           │   ├── MI_ParkBench.uasset
+│   │   │   │           │   ├── MI_PierBench.uasset
+│   │   │   │           │   └── M_BenchMaterial_Base.uasset
+│   │   │   │           ├── Texture/
+│   │   │   │           │   ├── parkBench/
+│   │   │   │           │   │   ├── T_parkBench_AOMRD.uasset
+│   │   │   │           │   │   ├── T_parkBench_C.uasset
+│   │   │   │           │   │   └── T_parkBench_N.uasset
+│   │   │   │           │   ├── pierBench/
+│   │   │   │           │   │   ├── T_pierBench_AOMRD.uasset
+│   │   │   │           │   │   ├── T_pierBench_C.uasset
+│   │   │   │           │   │   └── T_pierBench_N.uasset
+│   │   │   │           │   ├── Albedo.uasset
+│   │   │   │           │   ├── Normal.uasset
+│   │   │   │           │   ├── T_bench_C.uasset
+│   │   │   │           │   ├── T_bench_M.uasset
+│   │   │   │           │   ├── T_bench_N.uasset
+│   │   │   │           │   └── whiteMask.uasset
+│   │   │   │           └── mesh/
+│   │   │   │               ├── SM_park_bench_N01.uasset
+│   │   │   │               └── SM_pier_bench_N01.uasset
+│   │   │   ├── System/
+│   │   │   │   ├── DataLayers/
+│   │   │   │   │   ├── L_Ai_TestLayer.uasset
+│   │   │   │   │   ├── L_Ai_TestLayer_BaseContent.uasset
+│   │   │   │   │   └── L_Ai_TestLayer_DynamicContent.uasset
+│   │   │   │   └── Experiences/
+│   │   │   │       ├── B_TestInventoryExperience.uasset
+│   │   │   │       └── LAS_InventoryTest.uasset
+│   │   │   ├── UserInterface/
+│   │   │   │   ├── ItemAcquiredToastEntry.uasset
+│   │   │   │   ├── TextStyle-Large.uasset
+│   │   │   │   ├── W_InteractionPrompt.uasset
+│   │   │   │   ├── W_InventoryGrid.uasset
+│   │   │   │   ├── W_InventoryScreen.uasset
+│   │   │   │   ├── W_InventoryTile.uasset
+│   │   │   │   ├── W_ItemAcquiredList.uasset
+│   │   │   │   ├── W_ItemAcquiredToastRow.uasset
+│   │   │   │   └── W_MapScreen.uasset
+│   │   │   └── ShooterExplorer.uasset
+│   ├── ShooterMaps/
+│   │   ├── Content/
+│   │   │   ├── GameplayCues/
+│   │   │   │   └── GC_Collect_Effect.uasset
+│   │   │   ├── Items/
+│   │   │   │   └── Backgrounds/
+│   │   │   │       └── ShooterGameLobbyBG.uasset
+│   │   │   ├── LevelSequence/
+│   │   │   │   ├── SEQ_LevelDesignShowcaseA.uasset
+│   │   │   │   ├── SEQ_LobbyScreen.uasset
+│   │   │   │   ├── SEQ_LobbyScreenAnim.uasset
+│   │   │   │   ├── SEQ_LobbyScreenAnim_2.uasset
+│   │   │   │   └── SEQ_ScreenCaptures.uasset
+│   │   │   ├── Maps/
+│   │   │   │   ├── DataLayers/
+│   │   │   │   │   ├── L_Convolution_Blockout/
+│   │   │   │   │   │   ├── Gameplay.uasset
+│   │   │   │   │   │   └── Layout.uasset
+│   │   │   │   │   ├── L_Expanse/
+│   │   │   │   │   │   ├── ExtraSpawn.uasset
+│   │   │   │   │   │   ├── Gameplay.uasset
+│   │   │   │   │   │   ├── LayoutModelA.uasset
+│   │   │   │   │   │   └── Lighting.uasset
+│   │   │   │   │   ├── L_Expanse_Blockout/
+│   │   │   │   │   │   ├── ExtraSpawn.uasset
+│   │   │   │   │   │   ├── Gameplay.uasset
+│   │   │   │   │   │   ├── LayoutModelA.uasset
+│   │   │   │   │   │   └── Lighting.uasset
+│   │   │   │   │   └── L_FiringRange_WP/
+│   │   │   │   │       ├── SM_ModuleA.uasset
+│   │   │   │   │       └── SM_Railing.uasset
+│   │   │   │   ├── L_Convolution_Blockout.umap
+│   │   │   │   ├── L_Convolution_Blockout_BuiltData.uasset
+│   │   │   │   ├── L_Expanse.umap
+│   │   │   │   ├── L_Expanse_Blockout.umap
+│   │   │   │   ├── L_Expanse_Blockout_BuiltData.uasset
+│   │   │   │   ├── L_Expanse_BuiltData.uasset
+│   │   │   │   ├── L_FiringRange_WP.umap
+│   │   │   │   └── L_ShooterFrontendBackground.umap
+│   │   │   ├── Meshes/
+│   │   │   │   ├── Convolution_Blockout/
+│   │   │   │   │   ├── MeshA_17F7D1.uasset
+│   │   │   │   │   ├── MeshA_1EAE54.uasset
+│   │   │   │   │   ├── MeshA_236ED6.uasset
+│   │   │   │   │   ├── MeshA_26DCF6.uasset
+│   │   │   │   │   ├── MeshA_2B2BFB.uasset
+│   │   │   │   │   ├── MeshA_42F814.uasset
+│   │   │   │   │   ├── MeshA_468CEA.uasset
+│   │   │   │   │   ├── MeshA_4B79A0.uasset
+│   │   │   │   │   ├── MeshA_4C179E.uasset
+│   │   │   │   │   ├── MeshA_51F752.uasset
+│   │   │   │   │   ├── MeshA_528CED.uasset
+│   │   │   │   │   ├── MeshA_53AD96.uasset
+│   │   │   │   │   ├── MeshA_53C696.uasset
+│   │   │   │   │   ├── MeshA_544E7E.uasset
+│   │   │   │   │   ├── MeshA_5E0D13.uasset
+│   │   │   │   │   ├── MeshA_6A6823.uasset
+│   │   │   │   │   ├── MeshA_761D63.uasset
+│   │   │   │   │   ├── MeshA_7C4B2B.uasset
+│   │   │   │   │   ├── MeshA_7EB701.uasset
+│   │   │   │   │   ├── MeshA_898E56.uasset
+│   │   │   │   │   ├── MeshA_8FCD15.uasset
+│   │   │   │   │   ├── MeshA_931D72.uasset
+│   │   │   │   │   ├── MeshA_98BFC7.uasset
+│   │   │   │   │   ├── MeshA_9CD4DD.uasset
+│   │   │   │   │   ├── MeshA_9E0475.uasset
+│   │   │   │   │   ├── MeshA_A0E610.uasset
+│   │   │   │   │   ├── MeshA_AECA18.uasset
+│   │   │   │   │   ├── MeshA_B85A18.uasset
+│   │   │   │   │   ├── MeshA_C223AB.uasset
+│   │   │   │   │   ├── MeshA_C5D66C.uasset
+│   │   │   │   │   ├── MeshA_DDDFE0.uasset
+│   │   │   │   │   ├── MeshA_DEF968.uasset
+│   │   │   │   │   ├── MeshA_E09F18.uasset
+│   │   │   │   │   ├── MeshA_EF0433.uasset
+│   │   │   │   │   ├── MeshA_F323C3.uasset
+│   │   │   │   │   ├── MeshA_FCCF96.uasset
+│   │   │   │   │   ├── MeshA_FE219F.uasset
+│   │   │   │   │   ├── MeshA__1155CE.uasset
+│   │   │   │   │   ├── MeshA__2AE6C2.uasset
+│   │   │   │   │   ├── MeshA__85DCA1.uasset
+│   │   │   │   │   ├── MeshA__8CD6AB.uasset
+│   │   │   │   │   ├── MeshA__C44FF5.uasset
+│   │   │   │   │   ├── MeshA__D24D1A.uasset
+│   │   │   │   │   ├── MeshA__DDFE44.uasset
+│   │   │   │   │   ├── Mesh__08803D.uasset
+│   │   │   │   │   ├── Mesh__0FA9DE.uasset
+│   │   │   │   │   ├── Mesh__13072C.uasset
+│   │   │   │   │   └── Mesh__150F7B.uasset
+│   │   │   │   ├── Expanse/
+│   │   │   │   │   ├── Mesh_A_2_00B92E.uasset
+│   │   │   │   │   ├── Mesh_A_2_01308C.uasset
+│   │   │   │   │   ├── Mesh_A_2_029CA5.uasset
+│   │   │   │   │   ├── Mesh_A_2_02F4BA.uasset
+│   │   │   │   │   ├── Mesh_A_2_03EDC5.uasset
+│   │   │   │   │   ├── Mesh_A_2_040F71.uasset
+│   │   │   │   │   ├── Mesh_A_2_05663B.uasset
+│   │   │   │   │   ├── Mesh_A_2_09F2DC.uasset
+│   │   │   │   │   ├── Mesh_A_2_09FF96.uasset
+│   │   │   │   │   ├── Mesh_A_2_0B044F.uasset
+│   │   │   │   │   ├── Mesh_A_2_0B5F2E.uasset
+│   │   │   │   │   ├── Mesh_A_2_0B8D9F.uasset
+│   │   │   │   │   ├── Mesh_A_2_0CE8EE.uasset
+│   │   │   │   │   ├── Mesh_A_2_0DFFED.uasset
+│   │   │   │   │   ├── Mesh_A_2_0E1544.uasset
+│   │   │   │   │   ├── Mesh_A_2_0E6029.uasset
+│   │   │   │   │   ├── Mesh_A_2_0ED3A2.uasset
+│   │   │   │   │   ├── Mesh_A_2_0EE11E.uasset
+│   │   │   │   │   ├── Mesh_A_2_0F7966.uasset
+│   │   │   │   │   ├── Mesh_A_2_0F799A.uasset
+│   │   │   │   │   ├── Mesh_A_2_1016B8.uasset
+│   │   │   │   │   ├── Mesh_A_2_12F2EB.uasset
+│   │   │   │   │   ├── Mesh_A_2_16ABA8.uasset
+│   │   │   │   │   ├── Mesh_A_2_16E57E.uasset
+│   │   │   │   │   ├── Mesh_A_2_18A49A.uasset
+│   │   │   │   │   ├── Mesh_A_2_18CF0C.uasset
+│   │   │   │   │   ├── Mesh_A_2_1A1A13.uasset
+│   │   │   │   │   ├── Mesh_A_2_1A257F.uasset
+│   │   │   │   │   ├── Mesh_A_2_1AC7F7.uasset
+│   │   │   │   │   ├── Mesh_A_2_1D0ED8.uasset
+│   │   │   │   │   ├── Mesh_A_2_1E58A3.uasset
+│   │   │   │   │   ├── Mesh_A_2_1ECB09.uasset
+│   │   │   │   │   ├── Mesh_A_2_1EE512.uasset
+│   │   │   │   │   ├── Mesh_A_2_219EDE.uasset
+│   │   │   │   │   ├── Mesh_A_2_24B46A.uasset
+│   │   │   │   │   ├── Mesh_A_2_25BB70.uasset
+│   │   │   │   │   ├── Mesh_A_2_25F7B2.uasset
+│   │   │   │   │   ├── Mesh_A_2_282B43.uasset
+│   │   │   │   │   ├── Mesh_A_2_2831B6.uasset
+│   │   │   │   │   ├── Mesh_A_2_285D49.uasset
+│   │   │   │   │   ├── Mesh_A_2_287C2A.uasset
+│   │   │   │   │   ├── Mesh_A_2_28A2AC.uasset
+│   │   │   │   │   ├── Mesh_A_2_28DD2C.uasset
+│   │   │   │   │   ├── Mesh_A_2_291D42.uasset
+│   │   │   │   │   ├── Mesh_A_2_29959A.uasset
+│   │   │   │   │   ├── Mesh_A_2_2C0BF7.uasset
+│   │   │   │   │   ├── Mesh_A_2_2C9F67.uasset
+│   │   │   │   │   ├── Mesh_A_2_2CF3C6.uasset
+│   │   │   │   │   ├── Mesh_A_2_2D6CAC.uasset
+│   │   │   │   │   ├── Mesh_A_2_2E79BE.uasset
+│   │   │   │   │   ├── Mesh_A_2_300D10.uasset
+│   │   │   │   │   ├── Mesh_A_2_300F08.uasset
+│   │   │   │   │   ├── Mesh_A_2_30182F.uasset
+│   │   │   │   │   ├── Mesh_A_2_30E606.uasset
+│   │   │   │   │   ├── Mesh_A_2_31388C.uasset
+│   │   │   │   │   ├── Mesh_A_2_3204DD.uasset
+│   │   │   │   │   ├── Mesh_A_2_36AA2A.uasset
+│   │   │   │   │   ├── Mesh_A_2_381B24.uasset
+│   │   │   │   │   ├── Mesh_A_2_3863E3.uasset
+│   │   │   │   │   ├── Mesh_A_2_390AC5.uasset
+│   │   │   │   │   ├── Mesh_A_2_390D5E.uasset
+│   │   │   │   │   ├── Mesh_A_2_3A9D55.uasset
+│   │   │   │   │   ├── Mesh_A_2_3B823E.uasset
+│   │   │   │   │   ├── Mesh_A_2_3BFC77.uasset
+│   │   │   │   │   ├── Mesh_A_2_3C3D27.uasset
+│   │   │   │   │   ├── Mesh_A_2_3C64E8.uasset
+│   │   │   │   │   ├── Mesh_A_2_3F085E.uasset
+│   │   │   │   │   ├── Mesh_A_2_3F45BD.uasset
+│   │   │   │   │   ├── Mesh_A_2_40429E.uasset
+│   │   │   │   │   ├── Mesh_A_2_40987B.uasset
+│   │   │   │   │   ├── Mesh_A_2_40D9C0.uasset
+│   │   │   │   │   ├── Mesh_A_2_412B3D.uasset
+│   │   │   │   │   ├── Mesh_A_2_42BFF1.uasset
+│   │   │   │   │   ├── Mesh_A_2_435A42.uasset
+│   │   │   │   │   ├── Mesh_A_2_440E92.uasset
+│   │   │   │   │   ├── Mesh_A_2_44EBD6.uasset
+│   │   │   │   │   ├── Mesh_A_2_46A34E.uasset
+│   │   │   │   │   ├── Mesh_A_2_46ACC7.uasset
+│   │   │   │   │   ├── Mesh_A_2_47675F.uasset
+│   │   │   │   │   ├── Mesh_A_2_4791EE.uasset
+│   │   │   │   │   ├── Mesh_A_2_47DB7C.uasset
+│   │   │   │   │   ├── Mesh_A_2_48C7C1.uasset
+│   │   │   │   │   ├── Mesh_A_2_4935AE.uasset
+│   │   │   │   │   ├── Mesh_A_2_499DF9.uasset
+│   │   │   │   │   ├── Mesh_A_2_4B5953.uasset
+│   │   │   │   │   ├── Mesh_A_2_4B645A.uasset
+│   │   │   │   │   ├── Mesh_A_2_4C3618.uasset
+│   │   │   │   │   ├── Mesh_A_2_4DBC05.uasset
+│   │   │   │   │   ├── Mesh_A_2_4E3294.uasset
+│   │   │   │   │   ├── Mesh_A_2_4EA8AE.uasset
+│   │   │   │   │   ├── Mesh_A_2_5028E3.uasset
+│   │   │   │   │   ├── Mesh_A_2_515FD9.uasset
+│   │   │   │   │   ├── Mesh_A_2_518C36.uasset
+│   │   │   │   │   ├── Mesh_A_2_519C61.uasset
+│   │   │   │   │   ├── Mesh_A_2_53E335.uasset
+│   │   │   │   │   ├── Mesh_A_2_54094D.uasset
+│   │   │   │   │   ├── Mesh_A_2_541EAC.uasset
+│   │   │   │   │   ├── Mesh_A_2_544E9B.uasset
+│   │   │   │   │   ├── Mesh_A_2_5461E1.uasset
+│   │   │   │   │   ├── Mesh_A_2_548D6B.uasset
+│   │   │   │   │   ├── Mesh_A_2_55A5A8.uasset
+│   │   │   │   │   ├── Mesh_A_2_55CE0C.uasset
+│   │   │   │   │   ├── Mesh_A_2_565B55.uasset
+│   │   │   │   │   ├── Mesh_A_2_57D463.uasset
+│   │   │   │   │   ├── Mesh_A_2_57FA6B.uasset
+│   │   │   │   │   ├── Mesh_A_2_58DDD6.uasset
+│   │   │   │   │   ├── Mesh_A_2_58DE09.uasset
+│   │   │   │   │   ├── Mesh_A_2_5A3D39.uasset
+│   │   │   │   │   ├── Mesh_A_2_5B464C.uasset
+│   │   │   │   │   ├── Mesh_A_2_5B848E.uasset
+│   │   │   │   │   ├── Mesh_A_2_5C9C02.uasset
+│   │   │   │   │   ├── Mesh_A_2_5CC092.uasset
+│   │   │   │   │   ├── Mesh_A_2_5D0865.uasset
+│   │   │   │   │   ├── Mesh_A_2_5D2634.uasset
+│   │   │   │   │   ├── Mesh_A_2_5E608F.uasset
+│   │   │   │   │   ├── Mesh_A_2_5E7B8E.uasset
+│   │   │   │   │   ├── Mesh_A_2_5FC924.uasset
+│   │   │   │   │   ├── Mesh_A_2_602A69.uasset
+│   │   │   │   │   ├── Mesh_A_2_6091BB.uasset
+│   │   │   │   │   ├── Mesh_A_2_6150F1.uasset
+│   │   │   │   │   ├── Mesh_A_2_6183EC.uasset
+│   │   │   │   │   ├── Mesh_A_2_6263F1.uasset
+│   │   │   │   │   ├── Mesh_A_2_626D04.uasset
+│   │   │   │   │   ├── Mesh_A_2_62EDBC.uasset
+│   │   │   │   │   ├── Mesh_A_2_6475C0.uasset
+│   │   │   │   │   ├── Mesh_A_2_64C304.uasset
+│   │   │   │   │   ├── Mesh_A_2_6533F5.uasset
+│   │   │   │   │   ├── Mesh_A_2_668B4D.uasset
+│   │   │   │   │   ├── Mesh_A_2_66C10A.uasset
+│   │   │   │   │   ├── Mesh_A_2_66D8ED.uasset
+│   │   │   │   │   ├── Mesh_A_2_674F70.uasset
+│   │   │   │   │   ├── Mesh_A_2_6755C8.uasset
+│   │   │   │   │   ├── Mesh_A_2_68F12D.uasset
+│   │   │   │   │   ├── Mesh_A_2_6A12A8.uasset
+│   │   │   │   │   ├── Mesh_A_2_6AA72B.uasset
+│   │   │   │   │   ├── Mesh_A_2_6B0290.uasset
+│   │   │   │   │   ├── Mesh_A_2_6C9462.uasset
+│   │   │   │   │   ├── Mesh_A_2_6D8992.uasset
+│   │   │   │   │   ├── Mesh_A_2_6DD0A5.uasset
+│   │   │   │   │   ├── Mesh_A_2_6DDB71.uasset
+│   │   │   │   │   ├── Mesh_A_2_6E5781.uasset
+│   │   │   │   │   ├── Mesh_A_2_6E6D31.uasset
+│   │   │   │   │   ├── Mesh_A_2_6EC5BE.uasset
+│   │   │   │   │   ├── Mesh_A_2_71F876.uasset
+│   │   │   │   │   ├── Mesh_A_2_7350B6.uasset
+│   │   │   │   │   ├── Mesh_A_2_7378C0.uasset
+│   │   │   │   │   ├── Mesh_A_2_7386B9.uasset
+│   │   │   │   │   ├── Mesh_A_2_73BCB5.uasset
+│   │   │   │   │   ├── Mesh_A_2_75A15E.uasset
+│   │   │   │   │   ├── Mesh_A_2_75A17D.uasset
+│   │   │   │   │   ├── Mesh_A_2_75A517.uasset
+│   │   │   │   │   ├── Mesh_A_2_75CE0F.uasset
+│   │   │   │   │   ├── Mesh_A_2_76B214.uasset
+│   │   │   │   │   ├── Mesh_A_2_7715CE.uasset
+│   │   │   │   │   ├── Mesh_A_2_778EF5.uasset
+│   │   │   │   │   ├── Mesh_A_2_7869F3.uasset
+│   │   │   │   │   ├── Mesh_A_2_7AAD47.uasset
+│   │   │   │   │   ├── Mesh_A_2_7AC870.uasset
+│   │   │   │   │   ├── Mesh_A_2_7B0F50.uasset
+│   │   │   │   │   ├── Mesh_A_2_7B75E5.uasset
+│   │   │   │   │   ├── Mesh_A_2_7C67E5.uasset
+│   │   │   │   │   ├── Mesh_A_2_7D7382.uasset
+│   │   │   │   │   ├── Mesh_A_2_7DA053.uasset
+│   │   │   │   │   ├── Mesh_A_2_7E1711.uasset
+│   │   │   │   │   ├── Mesh_A_2_7E1EFF.uasset
+│   │   │   │   │   ├── Mesh_A_2_82557F.uasset
+│   │   │   │   │   ├── Mesh_A_2_82FBB8.uasset
+│   │   │   │   │   ├── Mesh_A_2_8352AC.uasset
+│   │   │   │   │   ├── Mesh_A_2_863DA2.uasset
+│   │   │   │   │   ├── Mesh_A_2_86B8FC.uasset
+│   │   │   │   │   ├── Mesh_A_2_87783F.uasset
+│   │   │   │   │   ├── Mesh_A_2_87DE16.uasset
+│   │   │   │   │   ├── Mesh_A_2_88BCCF.uasset
+│   │   │   │   │   ├── Mesh_A_2_8C8BA9.uasset
+│   │   │   │   │   ├── Mesh_A_2_8F6760.uasset
+│   │   │   │   │   ├── Mesh_A_2_8FB4DA.uasset
+│   │   │   │   │   ├── Mesh_A_2_90A919.uasset
+│   │   │   │   │   ├── Mesh_A_2_914EFE.uasset
+│   │   │   │   │   ├── Mesh_A_2_93E969.uasset
+│   │   │   │   │   ├── Mesh_A_2_94ED4E.uasset
+│   │   │   │   │   ├── Mesh_A_2_967D3A.uasset
+│   │   │   │   │   ├── Mesh_A_2_96C65A.uasset
+│   │   │   │   │   ├── Mesh_A_2_9940C7.uasset
+│   │   │   │   │   ├── Mesh_A_2_9964B7.uasset
+│   │   │   │   │   ├── Mesh_A_2_99A201.uasset
+│   │   │   │   │   ├── Mesh_A_2_99AF90.uasset
+│   │   │   │   │   ├── Mesh_A_2_9AA6C7.uasset
+│   │   │   │   │   ├── Mesh_A_2_9AA9E2.uasset
+│   │   │   │   │   ├── Mesh_A_2_9ABC14.uasset
+│   │   │   │   │   ├── Mesh_A_2_9AC198.uasset
+│   │   │   │   │   ├── Mesh_A_2_9C7ACC.uasset
+│   │   │   │   │   ├── Mesh_A_2_9C9CCA.uasset
+│   │   │   │   │   ├── Mesh_A_2_9CD27F.uasset
+│   │   │   │   │   ├── Mesh_A_2_9D2FA2.uasset
+│   │   │   │   │   ├── Mesh_A_2_9E4FA3.uasset
+│   │   │   │   │   ├── Mesh_A_2_A14CD1.uasset
+│   │   │   │   │   ├── Mesh_A_2_A23660.uasset
+│   │   │   │   │   ├── Mesh_A_2_A35EAD.uasset
+│   │   │   │   │   ├── Mesh_A_2_A4C633.uasset
+│   │   │   │   │   ├── Mesh_A_2_A522DA.uasset
+│   │   │   │   │   ├── Mesh_A_2_A5F894.uasset
+│   │   │   │   │   ├── Mesh_A_2_A66FC6.uasset
+│   │   │   │   │   ├── Mesh_A_2_A6AC56.uasset
+│   │   │   │   │   ├── Mesh_A_2_A760DC.uasset
+│   │   │   │   │   ├── Mesh_A_2_A7D0BC.uasset
+│   │   │   │   │   ├── Mesh_A_2_A82418.uasset
+│   │   │   │   │   ├── Mesh_A_2_A83366.uasset
+│   │   │   │   │   ├── Mesh_A_2_A95EFA.uasset
+│   │   │   │   │   ├── Mesh_A_2_A98BBB.uasset
+│   │   │   │   │   ├── Mesh_A_2_AAB9D4.uasset
+│   │   │   │   │   ├── Mesh_A_2_AB2B07.uasset
+│   │   │   │   │   ├── Mesh_A_2_ABF695.uasset
+│   │   │   │   │   ├── Mesh_A_2_AC587F.uasset
+│   │   │   │   │   ├── Mesh_A_2_AC8176.uasset
+│   │   │   │   │   ├── Mesh_A_2_AD71D2.uasset
+│   │   │   │   │   ├── Mesh_A_2_ADBD2B.uasset
+│   │   │   │   │   ├── Mesh_A_2_AEB1AF.uasset
+│   │   │   │   │   ├── Mesh_A_2_B0D608.uasset
+│   │   │   │   │   ├── Mesh_A_2_B12CED.uasset
+│   │   │   │   │   ├── Mesh_A_2_B241CA.uasset
+│   │   │   │   │   ├── Mesh_A_2_B281E9.uasset
+│   │   │   │   │   ├── Mesh_A_2_B329AD.uasset
+│   │   │   │   │   ├── Mesh_A_2_B451E3.uasset
+│   │   │   │   │   ├── Mesh_A_2_B50523.uasset
+│   │   │   │   │   ├── Mesh_A_2_B5D1BF.uasset
+│   │   │   │   │   ├── Mesh_A_2_B61E45.uasset
+│   │   │   │   │   ├── Mesh_A_2_B6E976.uasset
+│   │   │   │   │   ├── Mesh_A_2_B83448.uasset
+│   │   │   │   │   ├── Mesh_A_2_B91289.uasset
+│   │   │   │   │   ├── Mesh_A_2_B9133A.uasset
+│   │   │   │   │   ├── Mesh_A_2_B91A4B.uasset
+│   │   │   │   │   ├── Mesh_A_2_B93EB0.uasset
+│   │   │   │   │   ├── Mesh_A_2_B94F97.uasset
+│   │   │   │   │   ├── Mesh_A_2_B9732E.uasset
+│   │   │   │   │   ├── Mesh_A_2_BB5906.uasset
+│   │   │   │   │   ├── Mesh_A_2_BB85A6.uasset
+│   │   │   │   │   ├── Mesh_A_2_BBA547.uasset
+│   │   │   │   │   ├── Mesh_A_2_BBFF8B.uasset
+│   │   │   │   │   ├── Mesh_A_2_BC948F.uasset
+│   │   │   │   │   ├── Mesh_A_2_BCAFE2.uasset
+│   │   │   │   │   ├── Mesh_A_2_BCC5ED.uasset
+│   │   │   │   │   ├── Mesh_A_2_BF565B.uasset
+│   │   │   │   │   ├── Mesh_A_2_C0925B.uasset
+│   │   │   │   │   ├── Mesh_A_2_C0E44F.uasset
+│   │   │   │   │   ├── Mesh_A_2_C1120D.uasset
+│   │   │   │   │   ├── Mesh_A_2_C18AE2.uasset
+│   │   │   │   │   ├── Mesh_A_2_C2CE57.uasset
+│   │   │   │   │   ├── Mesh_A_2_C33CFB.uasset
+│   │   │   │   │   ├── Mesh_A_2_C3977A.uasset
+│   │   │   │   │   ├── Mesh_A_2_C3E13A.uasset
+│   │   │   │   │   ├── Mesh_A_2_C5005E.uasset
+│   │   │   │   │   ├── Mesh_A_2_C56B37.uasset
+│   │   │   │   │   ├── Mesh_A_2_C5797F.uasset
+│   │   │   │   │   ├── Mesh_A_2_C6565E.uasset
+│   │   │   │   │   ├── Mesh_A_2_C85750.uasset
+│   │   │   │   │   ├── Mesh_A_2_C8AD57.uasset
+│   │   │   │   │   ├── Mesh_A_2_C963E5.uasset
+│   │   │   │   │   ├── Mesh_A_2_CA7E79.uasset
+│   │   │   │   │   ├── Mesh_A_2_CB0246.uasset
+│   │   │   │   │   ├── Mesh_A_2_CB38AF.uasset
+│   │   │   │   │   ├── Mesh_A_2_CCF258.uasset
+│   │   │   │   │   ├── Mesh_A_2_CD4CE4.uasset
+│   │   │   │   │   ├── Mesh_A_2_CE3131.uasset
+│   │   │   │   │   ├── Mesh_A_2_CE39D7.uasset
+│   │   │   │   │   ├── Mesh_A_2_CE8BFF.uasset
+│   │   │   │   │   ├── Mesh_A_2_CED0F7.uasset
+│   │   │   │   │   ├── Mesh_A_2_CEE282.uasset
+│   │   │   │   │   ├── Mesh_A_2_CF8333.uasset
+│   │   │   │   │   ├── Mesh_A_2_CFB02B.uasset
+│   │   │   │   │   ├── Mesh_A_2_D03773.uasset
+│   │   │   │   │   ├── Mesh_A_2_D21E89.uasset
+│   │   │   │   │   ├── Mesh_A_2_D26128.uasset
+│   │   │   │   │   ├── Mesh_A_2_D29BDA.uasset
+│   │   │   │   │   ├── Mesh_A_2_D59A41.uasset
+│   │   │   │   │   ├── Mesh_A_2_D6817D.uasset
+│   │   │   │   │   ├── Mesh_A_2_D6B253.uasset
+│   │   │   │   │   ├── Mesh_A_2_D71D44.uasset
+│   │   │   │   │   ├── Mesh_A_2_D725FD.uasset
+│   │   │   │   │   ├── Mesh_A_2_D7370E.uasset
+│   │   │   │   │   ├── Mesh_A_2_D83A6F.uasset
+│   │   │   │   │   ├── Mesh_A_2_D8DF11.uasset
+│   │   │   │   │   ├── Mesh_A_2_D8FC82.uasset
+│   │   │   │   │   ├── Mesh_A_2_D99A95.uasset
+│   │   │   │   │   ├── Mesh_A_2_DD2052.uasset
+│   │   │   │   │   ├── Mesh_A_2_DEA3E4.uasset
+│   │   │   │   │   ├── Mesh_A_2_DFA3EF.uasset
+│   │   │   │   │   ├── Mesh_A_2_E0939C.uasset
+│   │   │   │   │   ├── Mesh_A_2_E1239A.uasset
+│   │   │   │   │   ├── Mesh_A_2_E222D0.uasset
+│   │   │   │   │   ├── Mesh_A_2_E2B5F0.uasset
+│   │   │   │   │   ├── Mesh_A_2_E4871D.uasset
+│   │   │   │   │   ├── Mesh_A_2_E6A5E5.uasset
+│   │   │   │   │   ├── Mesh_A_2_E7028D.uasset
+│   │   │   │   │   ├── Mesh_A_2_E7FA38.uasset
+│   │   │   │   │   ├── Mesh_A_2_E850CA.uasset
+│   │   │   │   │   ├── Mesh_A_2_E97AAF.uasset
+│   │   │   │   │   ├── Mesh_A_2_E97F0D.uasset
+│   │   │   │   │   ├── Mesh_A_2_EA21AF.uasset
+│   │   │   │   │   ├── Mesh_A_2_EA5470.uasset
+│   │   │   │   │   ├── Mesh_A_2_EAE80F.uasset
+│   │   │   │   │   ├── Mesh_A_2_EBAD85.uasset
+│   │   │   │   │   ├── Mesh_A_2_ED9231.uasset
+│   │   │   │   │   ├── Mesh_A_2_EE66FF.uasset
+│   │   │   │   │   ├── Mesh_A_2_EE7365.uasset
+│   │   │   │   │   ├── Mesh_A_2_EF0EBF.uasset
+│   │   │   │   │   ├── Mesh_A_2_F00149.uasset
+│   │   │   │   │   ├── Mesh_A_2_F2E8FE.uasset
+│   │   │   │   │   ├── Mesh_A_2_F2FEC3.uasset
+│   │   │   │   │   ├── Mesh_A_2_F46025.uasset
+│   │   │   │   │   ├── Mesh_A_2_F4E01C.uasset
+│   │   │   │   │   ├── Mesh_A_2_F70257.uasset
+│   │   │   │   │   ├── Mesh_A_2_F7643F.uasset
+│   │   │   │   │   ├── Mesh_A_2_F7BB75.uasset
+│   │   │   │   │   ├── Mesh_A_2_F7DEF3.uasset
+│   │   │   │   │   ├── Mesh_A_2_F81362.uasset
+│   │   │   │   │   ├── Mesh_A_2_F989A4.uasset
+│   │   │   │   │   ├── Mesh_A_2_FA0294.uasset
+│   │   │   │   │   ├── Mesh_A_2_FABDB7.uasset
+│   │   │   │   │   ├── Mesh_A_2_FB9BFB.uasset
+│   │   │   │   │   ├── Mesh_A_2_FD27FC.uasset
+│   │   │   │   │   ├── Mesh_A_2_FD9682.uasset
+│   │   │   │   │   ├── Mesh_A_2_FDE792.uasset
+│   │   │   │   │   └── Mesh_A_2_FFFDB7.uasset
+│   │   │   │   ├── Expanse_Blockout/
+│   │   │   │   │   ├── Block_1x1m_A_AE19EE.uasset
+│   │   │   │   │   ├── Block_1x1m_A_AE19EE2.uasset
+│   │   │   │   │   ├── BridgeC_0FB30D.uasset
+│   │   │   │   │   ├── BridgeC_2A4BC0.uasset
+│   │   │   │   │   ├── BridgeC_F435F8.uasset
+│   │   │   │   │   ├── BridgeD_745AEE.uasset
+│   │   │   │   │   ├── BridgeE_BE2BF9.uasset
+│   │   │   │   │   ├── BridgeF_A24598.uasset
+│   │   │   │   │   ├── BridgeG_24FE19.uasset
+│   │   │   │   │   ├── BridgeG_8A4B12.uasset
+│   │   │   │   │   ├── BridgeH_79E7F1.uasset
+│   │   │   │   │   ├── BridgeI_F882AC.uasset
+│   │   │   │   │   ├── BridgePlatformA_5DAD14.uasset
+│   │   │   │   │   ├── CapsulePanelA_3EE9F1.uasset
+│   │   │   │   │   ├── Curve90degA_EDADA0.uasset
+│   │   │   │   │   ├── CurvedCornerA_79A789.uasset
+│   │   │   │   │   ├── CurvedCornerB_A1B0FC.uasset
+│   │   │   │   │   ├── CurvedCornerD_B066FD.uasset
+│   │   │   │   │   ├── CurvedCornerE_CDF25B.uasset
+│   │   │   │   │   ├── CurvedCornerF_0E6296.uasset
+│   │   │   │   │   ├── CurvedCornerH_B658E9.uasset
+│   │   │   │   │   ├── CurvedCornerI_9DE3E7.uasset
+│   │   │   │   │   ├── CurvedCornerJ_00A6B8.uasset
+│   │   │   │   │   ├── CurvedCornerK_E291AD.uasset
+│   │   │   │   │   ├── CurvedCornerL_0E20B9.uasset
+│   │   │   │   │   ├── CurvedCornerM_37DFB0.uasset
+│   │   │   │   │   ├── CurvedCornerN_21DC0E.uasset
+│   │   │   │   │   ├── CurvedFrameA_CED960.uasset
+│   │   │   │   │   ├── CurvedFrameB_A96453.uasset
+│   │   │   │   │   ├── CurvedFrameC_BBCBA1.uasset
+│   │   │   │   │   ├── CurvedFrameF_D58171.uasset
+│   │   │   │   │   ├── CurvedFrameI_70EB60.uasset
+│   │   │   │   │   ├── CurvedFrameK_A6442D.uasset
+│   │   │   │   │   ├── CurvedPlatformA_44F777.uasset
+│   │   │   │   │   ├── ElevatorShaftA_15FEAE.uasset
+│   │   │   │   │   ├── ElevatorShaftA_6D6664.uasset
+│   │   │   │   │   ├── ElevatorShaftA_ABC8C9.uasset
+│   │   │   │   │   ├── ElevatorShaftB_9B1610.uasset
+│   │   │   │   │   ├── ElevatorShaftC_3ED496.uasset
+│   │   │   │   │   ├── FloorC_2EE61D.uasset
+│   │   │   │   │   ├── FloorE_0861E5.uasset
+│   │   │   │   │   ├── MeshA_069AB9.uasset
+│   │   │   │   │   ├── MeshA_09FE63.uasset
+│   │   │   │   │   ├── MeshA_0AEAE9.uasset
+│   │   │   │   │   ├── MeshA_0F7922.uasset
+│   │   │   │   │   ├── MeshA_11A71C.uasset
+│   │   │   │   │   ├── MeshA_210DB9.uasset
+│   │   │   │   │   ├── MeshA_261D01.uasset
+│   │   │   │   │   ├── MeshA_2D5981.uasset
+│   │   │   │   │   ├── MeshA_45E13F.uasset
+│   │   │   │   │   ├── MeshA_51846C.uasset
+│   │   │   │   │   ├── MeshA_5668F6.uasset
+│   │   │   │   │   ├── MeshA_57F8E0.uasset
+│   │   │   │   │   ├── MeshA_651DD3.uasset
+│   │   │   │   │   ├── MeshA_6580D3.uasset
+│   │   │   │   │   ├── MeshA_6619EC.uasset
+│   │   │   │   │   ├── MeshA_68DC05.uasset
+│   │   │   │   │   ├── MeshA_6D7B2B.uasset
+│   │   │   │   │   ├── MeshA_8FDDCE.uasset
+│   │   │   │   │   ├── MeshA_9F59D5.uasset
+│   │   │   │   │   ├── MeshA_B007D8.uasset
+│   │   │   │   │   ├── MeshA_BB4365.uasset
+│   │   │   │   │   ├── MeshA_BE0B22.uasset
+│   │   │   │   │   ├── MeshA_F7E137.uasset
+│   │   │   │   │   ├── MeshA_F9C7A5.uasset
+│   │   │   │   │   ├── MixedCornerPanelA_983A72.uasset
+│   │   │   │   │   ├── MixedCornerPanelB_F18C6B.uasset
+│   │   │   │   │   ├── PanelFloorA_9F0EC2.uasset
+│   │   │   │   │   ├── PanelFloorB_2EEFC7.uasset
+│   │   │   │   │   ├── PanelFloorC_38C6C5.uasset
+│   │   │   │   │   ├── PanelFloorC_3E49C5.uasset
+│   │   │   │   │   ├── PanelFloorD_D3F505.uasset
+│   │   │   │   │   ├── PanelPillA_11DB64.uasset
+│   │   │   │   │   ├── RampA_084DE2.uasset
+│   │   │   │   │   ├── RampA_1402A7.uasset
+│   │   │   │   │   ├── RampA_51A1CB.uasset
+│   │   │   │   │   ├── RampA_6B19EF.uasset
+│   │   │   │   │   ├── RampA_6C5848.uasset
+│   │   │   │   │   ├── RoundedBlockA_4375F3.uasset
+│   │   │   │   │   ├── SM_BridgeH_1E9B32.uasset
+│   │   │   │   │   ├── SM_BridgeH_7DB141.uasset
+│   │   │   │   │   ├── SM_CurvedFloorPatchA_C1C156.uasset
+│   │   │   │   │   ├── SM_CurvedFloorPatchB_C82BD3.uasset
+│   │   │   │   │   ├── SM_FloorD_968DF8.uasset
+│   │   │   │   │   ├── SM_TeleporterFrameA_3EC34D.uasset
+│   │   │   │   │   ├── SM_TeleporterFrameA_92CAB8.uasset
+│   │   │   │   │   ├── SM_TeleporterFrameB_4E67A5.uasset
+│   │   │   │   │   ├── SM_WallJ_5BB90A.uasset
+│   │   │   │   │   ├── SkyBridgeTrimeA_DD17F1.uasset
+│   │   │   │   │   ├── StairsA_C2055F.uasset
+│   │   │   │   │   ├── StairsB_12305C.uasset
+│   │   │   │   │   ├── StairsD_09167C.uasset
+│   │   │   │   │   ├── StairsE_0D5A82.uasset
+│   │   │   │   │   ├── WallB_77E966.uasset
+│   │   │   │   │   ├── WallC_C7EBFC.uasset
+│   │   │   │   │   ├── WallD_B1D74E.uasset
+│   │   │   │   │   ├── WallF_81EBEC.uasset
+│   │   │   │   │   ├── WallG_12E713.uasset
+│   │   │   │   │   ├── WallG_1C05FB.uasset
+│   │   │   │   │   ├── WallH_3749AE.uasset
+│   │   │   │   │   ├── WallH_457ECD.uasset
+│   │   │   │   │   ├── WallL_2DDDBA.uasset
+│   │   │   │   │   ├── WallM_6F701A.uasset
+│   │   │   │   │   ├── WallN_CC89C4.uasset
+│   │   │   │   │   ├── WallO_5E167F.uasset
+│   │   │   │   │   ├── WallP_4BBE39.uasset
+│   │   │   │   │   ├── WallT_1C5B93.uasset
+│   │   │   │   │   ├── WallV_52386B.uasset
+│   │   │   │   │   ├── WallW_ADBE4B.uasset
+│   │   │   │   │   ├── WindowFrameB_D9E5E1.uasset
+│   │   │   │   │   └── WindowFrameC_0EB4BF.uasset
+│   │   │   │   ├── FiringRange/
+│   │   │   │   │   ├── SM_ModuleA_090.uasset
+│   │   │   │   │   ├── SM_Railing_010.uasset
+│   │   │   │   │   └── SM_stairs_1.uasset
+│   │   │   │   └── UELogo.uasset
+│   │   │   ├── System/
+│   │   │   │   └── Playlists/
+│   │   │   │       ├── DA_Convolution_ControlPoint.uasset
+│   │   │   │       ├── DA_Expanse_TDM.uasset
+│   │   │   │       ├── T_UI_LoadingScreen_ControlGame.uasset
+│   │   │   │       ├── T_UI_LoadingScreen_ShooterGame.uasset
+│   │   │   │       ├── W_LoadingScreen_ControlPoint.uasset
+│   │   │   │       └── W_LoadingScreen_TDM.uasset
+│   │   │   ├── ShooterMaps.uasset
+│   │   │   └── ShooterMaps_Label.uasset
+│   │   ├── Resources/
+│   ├── ShooterTests/
+│   │   ├── Content/
+│   │   │   ├── Blueprint/
+│   │   │   │   ├── BP_GameplayEffectPad_Forcefeedback.uasset
+│   │   │   │   ├── B_DevicePropertyTester.uasset
+│   │   │   │   ├── B_Test_AutoRun.uasset
+│   │   │   │   ├── B_Test_Base.uasset
+│   │   │   │   └── B_Test_FireWeapon.uasset
+│   │   │   ├── Input/
+│   │   │   │   ├── DeviceColor/
+│   │   │   │   │   ├── B_InputDeviceColor.uasset
+│   │   │   │   │   ├── C_InputDeviceColor.uasset
+│   │   │   │   │   ├── FFE_ChangeColorOverTime.uasset
+│   │   │   │   │   └── FFE_ChangeColorTest.uasset
+│   │   │   │   ├── SoundVibrations/
+│   │   │   │   │   ├── B_AudioBasedVibration.uasset
+│   │   │   │   │   ├── Emote_FingerGuns_Test.uasset
+│   │   │   │   │   ├── GamepadAudioSubmix.uasset
+│   │   │   │   │   └── GamepadVibrationSubmix.uasset
+│   │   │   │   ├── TriggerFeedback/
+│   │   │   │   │   ├── B_TriggerFeedbackTest.uasset
+│   │   │   │   │   ├── C_TriggerPosition.uasset
+│   │   │   │   │   └── C_TriggerStr.uasset
+│   │   │   │   ├── TriggerVibration/
+│   │   │   │   │   ├── B_Trigger_Vibration_Test.uasset
+│   │   │   │   │   ├── C_TriggerVibration_Amplitude.uasset
+│   │   │   │   │   ├── C_TriggerVibration_Frequency.uasset
+│   │   │   │   │   └── C_TriggerVibration_Position.uasset
+│   │   │   │   ├── C_InputDeviceColor.uasset
+│   │   │   │   └── FFE_ChangeColorTest.uasset
+│   │   │   ├── Maps/
+│   │   │   │   ├── L_ShooterTest_AutoRun.umap
+│   │   │   │   ├── L_ShooterTest_Basic.umap
+│   │   │   │   ├── L_ShooterTest_DeviceProperties.umap
+│   │   │   │   └── L_ShooterTest_FireWeapon.umap
+│   │   │   ├── System/
+│   │   │   │   └── Experiences/
+│   │   │   │       ├── B_AutomatedShooterTest.uasset
+│   │   │   │       └── B_BasicShooterTest.uasset
+│   │   │   └── ShooterTests.uasset
+│   │   ├── Resources/
+│   │   ├── Source/
+│   │   │   └── ShooterTestsRuntime/
+│   │   │       ├── Private/
+│   │   │       │   ├── Utilities/
+│   └── TopDownArena/
+│       ├── Config/
+│       │   └── Tags/
+│       ├── Content/
+│       │   ├── Game/
+│       │   │   ├── Bombs/
+│       │   │   │   ├── B_Bomb_Base.uasset
+│       │   │   │   ├── B_Bomb_Standard.uasset
+│       │   │   │   ├── BombPulseTime.uasset
+│       │   │   │   ├── Cue_DropBomb.uasset
+│       │   │   │   ├── DropBomb_Montage.uasset
+│       │   │   │   ├── Explosion22.uasset
+│       │   │   │   ├── ExplosionFireballCue.uasset
+│       │   │   │   ├── GA_DropBomb.uasset
+│       │   │   │   ├── GE_Damaged_By_Bomb.uasset
+│       │   │   │   ├── GE_DecrementBombsRemaining.uasset
+│       │   │   │   ├── GE_IncrementBombsRemaining.uasset
+│       │   │   │   ├── M_Bomb.uasset
+│       │   │   │   ├── M_Fireball.uasset
+│       │   │   │   └── TestCurveAtlas.uasset
+│       │   │   ├── Effects/
+│       │   │   │   ├── Bomb/
+│       │   │   │   │   ├── M_ExplosionMaterial.uasset
+│       │   │   │   │   └── NS_BombExplosion.uasset
+│       │   │   │   ├── PickUp/
+│       │   │   │   │   ├── M_Bomb.uasset
+│       │   │   │   │   ├── M_VerticalGradient.uasset
+│       │   │   │   │   ├── M_WoodBoxPickUp.uasset
+│       │   │   │   │   ├── NS_TopDownArenaPickupBomb.uasset
+│       │   │   │   │   ├── NS_TopDownArenaPickupRange.uasset
+│       │   │   │   │   ├── SM_CylinderVertical_Effect.uasset
+│       │   │   │   │   ├── SM_ExtraBomb.uasset
+│       │   │   │   │   ├── SM_ExtraRange.uasset
+│       │   │   │   │   └── T_BombPickUp.uasset
+│       │   │   │   ├── Player/
+│       │   │   │   │   └── M_PlayerCircle.uasset
+│       │   │   │   ├── M_Sparks_No_AA.uasset
+│       │   │   │   ├── NS_BombFuse.uasset
+│       │   │   │   ├── N_Emitter_Flame.uasset
+│       │   │   │   ├── N_Emitter_MuzzleFlash_Smoke.uasset
+│       │   │   │   └── SM_GeoSphere.uasset
+│       │   │   ├── Environment/
+│       │   │   │   ├── B_DestructableBlock.uasset
+│       │   │   │   ├── B_EditorMapInfo.uasset
+│       │   │   │   ├── MI_DestructibleBlock.uasset
+│       │   │   │   ├── MI_GroundFloor.uasset
+│       │   │   │   ├── M_Background.uasset
+│       │   │   │   └── M_GroundFloor.uasset
+│       │   │   ├── MapsGenerator/
+│       │   │   │   ├── B_BlockSpawning.uasset
+│       │   │   │   └── B_LevelGeneration.uasset
+│       │   │   ├── Modes/
+│       │   │   │   ├── B_TopDownArena_GameComponent_Base.uasset
+│       │   │   │   ├── B_TopDownArena_GameComponent_Lives.uasset
+│       │   │   │   ├── B_TopDownArena_GameComponent_SpawnLocalPlayers.uasset
+│       │   │   │   ├── GE_Warmup.uasset
+│       │   │   │   ├── Phase_Playing.uasset
+│       │   │   │   ├── Phase_PostGame.uasset
+│       │   │   │   └── Phase_Warmup.uasset
+│       │   │   ├── Pickups/
+│       │   │   │   ├── B_TopDownArena_Pickup.uasset
+│       │   │   │   ├── GET_ArenaPickup_Base.uasset
+│       │   │   │   ├── GE_AdditionalHeart.uasset
+│       │   │   │   ├── GE_BombCountUp.uasset
+│       │   │   │   ├── GE_BombRangeUp.uasset
+│       │   │   │   ├── GE_MoveSpeedUp.uasset
+│       │   │   │   ├── T_BombCountUp.uasset
+│       │   │   │   ├── T_BombRangeUp.uasset
+│       │   │   │   ├── T_HeartUp.uasset
+│       │   │   │   └── T_SpeedUp.uasset
+│       │   │   ├── Powerups/
+│       │   │   │   ├── GE_Stat_BombCount.uasset
+│       │   │   │   ├── GE_Stat_FireRange.uasset
+│       │   │   │   └── GE_Stat_MoveSpeed.uasset
+│       │   │   ├── AbilitySet_Arena.uasset
+│       │   │   ├── B_Hero_Arena.uasset
+│       │   │   ├── B_TeamSetup_FourTeams.uasset
+│       │   │   ├── CM_ArenaFramingCamera.uasset
+│       │   │   ├── GA_ArenaHero_Death.uasset
+│       │   │   ├── HeroData_Arena.uasset
+│       │   │   └── InputData_Arena.uasset
+│       │   ├── GameplayCues/
+│       │   │   ├── GCN_GetReady.uasset
+│       │   │   ├── GCN_PickupAcquired.uasset
+│       │   │   └── W_GetReady.uasset
+│       │   ├── Maps/
+│       │   │   ├── L_TopDownArenaGym.umap
+│       │   │   └── L_TopDown_LocalMultiplayer.umap
+│       │   ├── System/
+│       │   │   ├── Experiences/
+│       │   │   │   ├── B_TopDownArenaExperience.uasset
+│       │   │   │   └── B_TopDownArena_Multiplayer_Experience.uasset
+│       │   │   └── Playlists/
+│       │   │       ├── DA_TopDownArena_Multiplayer.uasset
+│       │   │       └── DA_TopDownArena_Splode.uasset
+│       │   ├── UserInterface/
+│       │   │   ├── Player/
+│       │   │   │   ├── Texture/
+│       │   │   │   │   ├── T_Bombs.uasset
+│       │   │   │   │   ├── T_Health_Icon.uasset
+│       │   │   │   │   ├── T_Range.uasset
+│       │   │   │   │   └── T_Speed.uasset
+│       │   │   │   ├── B_PlayerUIComponent.uasset
+│       │   │   │   ├── W_PlayerTile.uasset
+│       │   │   │   └── W_Powerup_Stat.uasset
+│       │   │   ├── W_RoundTimer.uasset
+│       │   │   ├── W_TopDownArenaHUDLayout.uasset
+│       │   │   └── W_TopDownPlayers.uasset
+│       │   ├── TopDownArena.uasset
+│       │   └── TopDownArena_Label.uasset
+│       ├── Resources/
+│       ├── Source/
+│       │   └── TopDownArenaRuntime/
+│       │       ├── Private/
+│       │       ├── Public/
+├── GameSettings/
+│   ├── Source/
+│   │   ├── Private/
+│   │   │   ├── DataSource/
+│   │   │   ├── EditCondition/
+│   │   │   ├── Registry/
+│   │   │   ├── Widgets/
+│   │   │   │   ├── Misc/
+│   │   │   │   ├── Responsive/
+│   │   ├── Public/
+│   │   │   ├── DataSource/
+│   │   │   ├── EditCondition/
+│   │   │   ├── Widgets/
+│   │   │   │   ├── Misc/
+├── GameSubtitles/
+│   ├── Config/
+│   │   └── Tags/
+│   ├── Source/
+│   │   ├── Private/
+│   │   │   ├── Players/
+│   │   │   ├── Widgets/
+│   │   ├── Public/
+│   │   │   ├── Players/
+│   │   │   ├── Widgets/
+├── GameplayMessageRouter/
+│   ├── Source/
+│   │   ├── GameplayMessageNodes/
+│   │   │   ├── Private/
+│   │   │   ├── Public/
+│   │   └── GameplayMessageRuntime/
+│   │       ├── Private/
+│   │       │   └── GameFramework/
+│   │       ├── Public/
+│   │       │   └── GameFramework/
+├── LyraExampleContent/
+│   ├── Content/
+│   │   ├── MSPresets/
+│   │   │   ├── MSTextures/
+│   │   │   │   ├── BlackPlaceholder.uasset
+│   │   │   │   ├── Placeholder.uasset
+│   │   │   │   ├── Placeholder_Normal.uasset
+│   │   │   │   └── WhitePlaceholder.uasset
+│   │   │   └── M_MS_Surface_Material/
+│   │   │       ├── Functions/
+│   │   │       │   ├── MF_Displacement.uasset
+│   │   │       │   ├── MF_MapAdjustments.uasset
+│   │   │       │   ├── MF_ObjAdjustments.uasset
+│   │   │       │   ├── MF_Tiling.uasset
+│   │   │       │   └── MF_Transmission.uasset
+│   │   │       ├── SubSurfaceProfile/
+│   │   │       │   ├── Red.uasset
+│   │   │       │   └── blue.uasset
+│   │   │       ├── MI_SurfaceGridBase.uasset
+│   │   │       └── M_MS_Surface_Material_TriPlanar.uasset
+│   │   ├── Materials/
+│   │   │   ├── MF/
+│   │   │   │   ├── MF_2DGrid.uasset
+│   │   │   │   ├── MF_NormalStrength.uasset
+│   │   │   │   ├── MF_TripleGrid.uasset
+│   │   │   │   ├── MF_WorldGrid.uasset
+│   │   │   │   └── WorldAlignedTextureMip.uasset
+│   │   │   ├── Textures/
+│   │   │   │   ├── GlassPattern/
+│   │   │   │   │   ├── T_GlassTiles_N_1.uasset
+│   │   │   │   │   ├── T_Glass_Normal_Tiling.uasset
+│   │   │   │   │   ├── T_Glass_Opacity_Tiled.uasset
+│   │   │   │   │   └── T_Glass_Pattern_Option_05.uasset
+│   │   │   │   ├── T_Concrete_Diffuse.uasset
+│   │   │   │   ├── T_Concrete_Glossiness.uasset
+│   │   │   │   ├── T_Concrete_Normal.uasset
+│   │   │   │   ├── T_GrungySurface_slnneipc_4K_MR.uasset
+│   │   │   │   ├── T_Paint_Diffuse.uasset
+│   │   │   │   ├── T_Paint_Glossiness.uasset
+│   │   │   │   ├── T_Paint_Normal.uasset
+│   │   │   │   ├── T_Paint_Opacity.uasset
+│   │   │   │   ├── T_ReflectorHexagon_N.uasset
+│   │   │   │   ├── T_Rough_Concrete_Floor_ulmmbiuo_4K_N.uasset
+│   │   │   │   └── T_StainlessBrushed_2K_normal.uasset
+│   │   │   ├── MI_Black_GlossFakeFloor.uasset
+│   │   │   ├── MI_GlassA_1.uasset
+│   │   │   ├── MI_GlassA_2.uasset
+│   │   │   ├── MI_GlassA_3.uasset
+│   │   │   ├── MI_GlassB_1.uasset
+│   │   │   ├── MI_GlassEdge.uasset
+│   │   │   ├── MI_Glass_Panels_2.uasset
+│   │   │   ├── MI_Glass_Tile.uasset
+│   │   │   ├── MI_Glass_Tile1.uasset
+│   │   │   ├── MI_MS_Basic_Metal.uasset
+│   │   │   ├── MI_MS_Blue_1.uasset
+│   │   │   ├── MI_MS_Blue_2.uasset
+│   │   │   ├── MI_MS_Orange_1.uasset
+│   │   │   ├── MI_MS_Red_1.uasset
+│   │   │   ├── MI_MS_Surface_1.uasset
+│   │   │   ├── MI_MS_Surface_12.uasset
+│   │   │   ├── MI_MS_Surface_13.uasset
+│   │   │   ├── MI_MS_Surface_14.uasset
+│   │   │   ├── MI_MS_Surface_2.uasset
+│   │   │   ├── MI_MS_Surface_3.uasset
+│   │   │   ├── MI_MS_Surface_4.uasset
+│   │   │   ├── MI_MS_Surface_5.uasset
+│   │   │   ├── MI_MS_Surface_6.uasset
+│   │   │   ├── MI_MS_Surface_7.uasset
+│   │   │   ├── MI_MS_Surface_8.uasset
+│   │   │   ├── MI_MS_Surface_Wall_1.uasset
+│   │   │   ├── MI_MS_Surface_Wall_2.uasset
+│   │   │   ├── MI_MS_Surface_Wall_3.uasset
+│   │   │   ├── MI_MetalChroma.uasset
+│   │   │   ├── MI_Tile_1.uasset
+│   │   │   ├── MI_tintedGlassTile_Y.uasset
+│   │   │   ├── MPC_Checker.uasset
+│   │   │   ├── M_GlassA.uasset
+│   │   │   ├── M_GlassB.uasset
+│   │   │   ├── M_GlassEdge.uasset
+│   │   │   ├── M_GlassTinted.uasset
+│   │   │   ├── M_Glass_Panels_NM.uasset
+│   │   │   ├── M_Glass_Tile.uasset
+│   │   │   ├── M_Metal.uasset
+│   │   │   ├── M_MetalChroma.uasset
+│   │   │   └── M_Tile.uasset
+│   │   └── Megascans/
+│   │       └── Surfaces/
+│   │           ├── Dirty_Painted_Concrete_Wall_vdqfcg3/
+│   │           │   ├── T_DirtyPaintedConcreteWall_vdqfcg3_4K_ORDp.uasset
+│   │           │   ├── T_Dirty_Painted_Concrete_Wall_vdqfcg3_4K_D.uasset
+│   │           │   └── T_Dirty_Painted_Concrete_Wall_vdqfcg3_4K_N.uasset
+│   │           └── Fortified_Shelter_Wall_ubimbhrdy/
+│   │               └── T_FortifiedShelterWall_ubimbhrdy_4K_ORDp.uasset
+├── LyraExtTool/
+│   ├── Content/
+│   │   └── EUW_MaterialTool.uasset
+│   ├── Resources/
+│   ├── Source/
+│   │   └── LyraExtTool/
+│   │       ├── Private/
+│   │       ├── Public/
+├── ModularGameplayActors/
+│   ├── Source/
+│   │   └── ModularGameplayActors/
+│   │       ├── Private/
+│   │       ├── Public/
+├── PocketWorlds/
+│   ├── Content/
+│   │   ├── M_Black.uasset
+│   │   ├── M_PocketCaptureMasked.uasset
+│   │   └── M_White.uasset
+│   ├── Source/
+│   │   ├── Private/
+│   │   ├── Public/
+└── UIExtension/
+    ├── Source/
+    │   ├── Private/
+    │   │   ├── Widgets/
+    │   ├── Public/
+    │   │   ├── Widgets/

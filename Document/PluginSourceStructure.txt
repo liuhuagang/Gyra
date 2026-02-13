@@ -1,0 +1,502 @@
+插件目录代码结构: Plugins/
+├── AsyncMixin/
+│   ├── Source/
+│   │   ├── Private/
+│   │   │   ├── AsyncMixin.cpp
+│   │   │   └── AsyncMixinModule.cpp
+│   │   ├── Public/
+│   │   │   └── AsyncMixin.h
+├── CommonGame/
+│   ├── Source/
+│   │   ├── Private/
+│   │   │   ├── Actions/
+│   │   │   │   ├── AsyncAction_CreateWidgetAsync.cpp
+│   │   │   │   ├── AsyncAction_PushContentToLayerForPlayer.cpp
+│   │   │   │   └── AsyncAction_ShowConfirmation.cpp
+│   │   │   ├── Messaging/
+│   │   │   │   ├── CommonGameDialog.cpp
+│   │   │   │   └── CommonMessagingSubsystem.cpp
+│   │   │   ├── CommonGameInstance.cpp
+│   │   │   ├── CommonGameModule.cpp
+│   │   │   ├── CommonLocalPlayer.cpp
+│   │   │   ├── CommonPlayerController.cpp
+│   │   │   ├── CommonPlayerInputKey.cpp
+│   │   │   ├── CommonUIExtensions.cpp
+│   │   │   ├── GameUIManagerSubsystem.cpp
+│   │   │   ├── GameUIPolicy.cpp
+│   │   │   ├── LogCommonGame.cpp
+│   │   │   ├── LogCommonGame.h
+│   │   │   └── PrimaryGameLayout.cpp
+│   │   ├── Public/
+│   │   │   ├── Actions/
+│   │   │   │   ├── AsyncAction_CreateWidgetAsync.h
+│   │   │   │   ├── AsyncAction_PushContentToLayerForPlayer.h
+│   │   │   │   └── AsyncAction_ShowConfirmation.h
+│   │   │   ├── Messaging/
+│   │   │   │   ├── CommonGameDialog.h
+│   │   │   │   └── CommonMessagingSubsystem.h
+│   │   │   ├── CommonGameInstance.h
+│   │   │   ├── CommonLocalPlayer.h
+│   │   │   ├── CommonPlayerController.h
+│   │   │   ├── CommonPlayerInputKey.h
+│   │   │   ├── CommonUIExtensions.h
+│   │   │   ├── GameUIManagerSubsystem.h
+│   │   │   ├── GameUIPolicy.h
+│   │   │   └── PrimaryGameLayout.h
+├── CommonLoadingScreen/
+│   ├── Resources/
+│   ├── Source/
+│   │   ├── CommonLoadingScreen/
+│   │   │   ├── Private/
+│   │   │   │   ├── CommonLoadingScreenModule.cpp
+│   │   │   │   ├── CommonLoadingScreenSettings.cpp
+│   │   │   │   ├── CommonLoadingScreenSettings.h
+│   │   │   │   └── LoadingScreenManager.cpp
+│   │   │   ├── Public/
+│   │   │   │   ├── LoadingProcessInterface.h
+│   │   │   │   ├── LoadingProcessTask.cpp
+│   │   │   │   ├── LoadingProcessTask.h
+│   │   │   │   └── LoadingScreenManager.h
+│   │   └── CommonStartupLoadingScreen/
+│   │       ├── Private/
+│   │       │   ├── CommonPreLoadScreen.cpp
+│   │       │   ├── CommonPreLoadScreen.h
+│   │       │   ├── CommonStartupLoadingScreen.cpp
+│   │       │   ├── SCommonPreLoadingScreenWidget.cpp
+│   │       │   └── SCommonPreLoadingScreenWidget.h
+├── CommonUser/
+│   ├── Resources/
+│   ├── Source/
+│   │   └── CommonUser/
+│   │       ├── Private/
+│   │       │   ├── AsyncAction_CommonUserInitialize.cpp
+│   │       │   ├── CommonSessionSubsystem.cpp
+│   │       │   ├── CommonUserBasicPresence.cpp
+│   │       │   ├── CommonUserModule.cpp
+│   │       │   ├── CommonUserSubsystem.cpp
+│   │       │   └── CommonUserTypes.cpp
+│   │       ├── Public/
+│   │       │   ├── AsyncAction_CommonUserInitialize.h
+│   │       │   ├── CommonSessionSubsystem.h
+│   │       │   ├── CommonUserBasicPresence.h
+│   │       │   ├── CommonUserModule.h
+│   │       │   ├── CommonUserSubsystem.h
+│   │       │   └── CommonUserTypes.h
+├── GameFeatures/
+│   ├── ShooterCore/
+│   │   ├── Config/
+│   │   │   └── Tags/
+│   │   ├── Content/
+│   │   │   ├── Accolades/
+│   │   │   ├── Blueprint/
+│   │   │   │   ├── Macros/
+│   │   │   ├── Bot/
+│   │   │   │   ├── BT/
+│   │   │   │   ├── EQS/
+│   │   │   │   │   ├── Context/
+│   │   │   │   │   ├── Generator/
+│   │   │   │   ├── Services/
+│   │   │   ├── Camera/
+│   │   │   ├── ControlPoint/
+│   │   │   │   ├── AI/
+│   │   │   │   ├── UI/
+│   │   │   ├── Effects/
+│   │   │   │   ├── Environmental/
+│   │   │   │   ├── Material/
+│   │   │   │   └── Mesh/
+│   │   │   ├── Elimination/
+│   │   │   │   ├── UI/
+│   │   │   ├── Experiences/
+│   │   │   │   ├── Phases/
+│   │   │   ├── Game/
+│   │   │   │   ├── Dash/
+│   │   │   │   ├── Emote/
+│   │   │   │   ├── Melee/
+│   │   │   │   ├── Respawn/
+│   │   │   ├── GameplayCues/
+│   │   │   ├── Input/
+│   │   │   │   ├── Abilities/
+│   │   │   │   ├── Actions/
+│   │   │   │   ├── Components/
+│   │   │   │   ├── Mappings/
+│   │   │   │   ├── Settings/
+│   │   │   ├── Item/
+│   │   │   ├── Items/
+│   │   │   │   ├── HealthPickup/
+│   │   │   │   ├── HealthPickup_Unused/
+│   │   │   │   └── PhysicsCube/
+│   │   │   ├── Maps/
+│   │   │   ├── System/
+│   │   │   │   ├── Audio/
+│   │   │   │   └── Playlists/
+│   │   │   ├── UserInterface/
+│   │   │   │   ├── HUD/
+│   │   │   │   ├── Notifications/
+│   │   │   │   │   ├── Accolades/
+│   │   │   │   │   └── EliminationFeed/
+│   │   │   │   ├── Replays/
+│   │   │   │   ├── ScoreBoard/
+│   │   │   │   │   ├── PlayerRow/
+│   │   │   ├── Weapon/
+│   │   │   │   └── Grenade/
+│   │   │   ├── Weapons/
+│   │   │   │   ├── Grenade/
+│   │   │   │   ├── NetShooter_PROTO/
+│   │   │   │   ├── Pistol/
+│   │   │   │   ├── Rifle/
+│   │   │   │   ├── Shotgun/
+│   │   ├── Resources/
+│   │   ├── Source/
+│   │   │   └── ShooterCoreRuntime/
+│   │   │       ├── Private/
+│   │   │       │   ├── Accolades/
+│   │   │       │   │   ├── LyraAccoladeDefinition.cpp
+│   │   │       │   │   └── LyraAccoladeHostWidget.cpp
+│   │   │       │   ├── Input/
+│   │   │       │   │   ├── AimAssistInputModifier.cpp
+│   │   │       │   │   ├── AimAssistTargetComponent.cpp
+│   │   │       │   │   └── AimAssistTargetManagerComponent.cpp
+│   │   │       │   ├── MessageProcessors/
+│   │   │       │   │   ├── AssistProcessor.cpp
+│   │   │       │   │   ├── ElimChainProcessor.cpp
+│   │   │       │   │   └── ElimStreakProcessor.cpp
+│   │   │       │   ├── LyraWorldCollectable.cpp
+│   │   │       │   ├── ShooterCoreRuntimeModule.cpp
+│   │   │       │   ├── ShooterCoreRuntimeSettings.cpp
+│   │   │       │   ├── TDM_PlayerSpawningManagmentComponent.cpp
+│   │   │       │   └── TDM_PlayerSpawningManagmentComponent.h
+│   │   │       ├── Public/
+│   │   │       │   ├── Accolades/
+│   │   │       │   │   ├── LyraAccoladeDefinition.h
+│   │   │       │   │   └── LyraAccoladeHostWidget.h
+│   │   │       │   ├── Input/
+│   │   │       │   │   ├── AimAssistInputModifier.h
+│   │   │       │   │   ├── AimAssistTargetComponent.h
+│   │   │       │   │   ├── AimAssistTargetManagerComponent.h
+│   │   │       │   │   └── IAimAssistTargetInterface.h
+│   │   │       │   ├── MessageProcessors/
+│   │   │       │   │   ├── AssistProcessor.h
+│   │   │       │   │   ├── ElimChainProcessor.h
+│   │   │       │   │   └── ElimStreakProcessor.h
+│   │   │       │   ├── Messages/
+│   │   │       │   │   └── ControlPointStatusMessage.h
+│   │   │       │   ├── LyraWorldCollectable.h
+│   │   │       │   ├── ShooterCoreRuntimeModule.h
+│   │   │       │   └── ShooterCoreRuntimeSettings.h
+│   ├── ShooterExplorer/
+│   │   ├── Config/
+│   │   │   └── Tags/
+│   │   ├── Content/
+│   │   │   ├── AI/
+│   │   │   │   ├── BehaviorTrees/
+│   │   │   │   │   ├── BB/
+│   │   │   │   │   ├── EnvQueries/
+│   │   │   │   │   ├── Tasks/
+│   │   │   │   ├── SmartObjects/
+│   │   │   │   │   ├── CAS_Data/
+│   │   │   │   │   ├── Definition/
+│   │   │   │   │   ├── Parents/
+│   │   │   │   │   ├── StateTrees/
+│   │   │   │   ├── StateTrees/
+│   │   │   │   │   ├── Evaluators/
+│   │   │   │   │   ├── Tasks/
+│   │   │   │   │   └── Trees/
+│   │   │   │   └── UnrealFestDemo/
+│   │   │   ├── Blueprint/
+│   │   │   ├── Game/
+│   │   │   ├── Input/
+│   │   │   │   ├── Abilities/
+│   │   │   │   ├── Actions/
+│   │   │   │   └── Mappings/
+│   │   │   ├── Interact/
+│   │   │   ├── Items/
+│   │   │   ├── Maps/
+│   │   │   ├── Meshes/
+│   │   │   │   ├── Gyms/
+│   │   │   │   └── Prop/
+│   │   │   │       └── Kit_bench_RR/
+│   │   │   │           ├── Material/
+│   │   │   │           ├── Texture/
+│   │   │   │           │   ├── parkBench/
+│   │   │   │           │   ├── pierBench/
+│   │   │   │           └── mesh/
+│   │   │   ├── System/
+│   │   │   │   ├── DataLayers/
+│   │   │   │   └── Experiences/
+│   │   │   ├── UserInterface/
+│   ├── ShooterMaps/
+│   │   ├── Content/
+│   │   │   ├── GameplayCues/
+│   │   │   ├── Items/
+│   │   │   │   └── Backgrounds/
+│   │   │   ├── LevelSequence/
+│   │   │   ├── Maps/
+│   │   │   │   ├── DataLayers/
+│   │   │   │   │   ├── L_Convolution_Blockout/
+│   │   │   │   │   ├── L_Expanse/
+│   │   │   │   │   ├── L_Expanse_Blockout/
+│   │   │   │   │   └── L_FiringRange_WP/
+│   │   │   ├── Meshes/
+│   │   │   │   ├── Convolution_Blockout/
+│   │   │   │   ├── Expanse/
+│   │   │   │   ├── Expanse_Blockout/
+│   │   │   │   ├── FiringRange/
+│   │   │   ├── System/
+│   │   │   │   └── Playlists/
+│   │   ├── Resources/
+│   ├── ShooterTests/
+│   │   ├── Content/
+│   │   │   ├── Blueprint/
+│   │   │   ├── Input/
+│   │   │   │   ├── DeviceColor/
+│   │   │   │   ├── SoundVibrations/
+│   │   │   │   ├── TriggerFeedback/
+│   │   │   │   ├── TriggerVibration/
+│   │   │   ├── Maps/
+│   │   │   ├── System/
+│   │   │   │   └── Experiences/
+│   │   ├── Resources/
+│   │   ├── Source/
+│   │   │   └── ShooterTestsRuntime/
+│   │   │       ├── Private/
+│   │   │       │   ├── Utilities/
+│   │   │       │   │   ├── ShooterTestsActorNetworkTest.h
+│   │   │       │   │   ├── ShooterTestsActorTest.h
+│   │   │       │   │   ├── ShooterTestsActorTestHelper.cpp
+│   │   │       │   │   ├── ShooterTestsActorTestHelper.h
+│   │   │       │   │   ├── ShooterTestsAnimationTestHelper.cpp
+│   │   │       │   │   ├── ShooterTestsAnimationTestHelper.h
+│   │   │       │   │   ├── ShooterTestsInputTestHelper.cpp
+│   │   │       │   │   ├── ShooterTestsInputTestHelper.h
+│   │   │       │   │   └── ShooterTestsNetworkComponent.h
+│   │   │       │   ├── ShooterTestsActorAnimationTests.cpp
+│   │   │       │   ├── ShooterTestsActorNetworkTests.cpp
+│   │   │       │   ├── ShooterTestsDevicePropertyTester.cpp
+│   │   │       │   ├── ShooterTestsDevicePropertyTester.h
+│   │   │       │   ├── ShooterTestsMapTests.cpp
+│   │   │       │   └── ShooterTestsRuntimeModule.cpp
+│   └── TopDownArena/
+│       ├── Config/
+│       │   └── Tags/
+│       ├── Content/
+│       │   ├── Game/
+│       │   │   ├── Bombs/
+│       │   │   ├── Effects/
+│       │   │   │   ├── Bomb/
+│       │   │   │   ├── PickUp/
+│       │   │   │   ├── Player/
+│       │   │   ├── Environment/
+│       │   │   ├── MapsGenerator/
+│       │   │   ├── Modes/
+│       │   │   ├── Pickups/
+│       │   │   ├── Powerups/
+│       │   ├── GameplayCues/
+│       │   ├── Maps/
+│       │   ├── System/
+│       │   │   ├── Experiences/
+│       │   │   └── Playlists/
+│       │   ├── UserInterface/
+│       │   │   ├── Player/
+│       │   │   │   ├── Texture/
+│       ├── Resources/
+│       ├── Source/
+│       │   └── TopDownArenaRuntime/
+│       │       ├── Private/
+│       │       │   ├── LyraCameraMode_TopDownArenaCamera.cpp
+│       │       │   ├── TopDownArenaAttributeSet.cpp
+│       │       │   ├── TopDownArenaAttributeSet.h
+│       │       │   ├── TopDownArenaMovementComponent.cpp
+│       │       │   ├── TopDownArenaMovementComponent.h
+│       │       │   ├── TopDownArenaPickupUIData.cpp
+│       │       │   ├── TopDownArenaPickupUIData.h
+│       │       │   └── TopDownArenaRuntimeModule.cpp
+│       │       ├── Public/
+│       │       │   ├── LyraCameraMode_TopDownArenaCamera.h
+│       │       │   └── TopDownArenaRuntimeModule.h
+├── GameSettings/
+│   ├── Source/
+│   │   ├── Private/
+│   │   │   ├── DataSource/
+│   │   │   │   └── GameSettingDataSourceDynamic.cpp
+│   │   │   ├── EditCondition/
+│   │   │   │   ├── WhenPlatformHasTrait.cpp
+│   │   │   │   └── WhenPlayingAsPrimaryPlayer.cpp
+│   │   │   ├── Registry/
+│   │   │   │   ├── GameSettingRegistry.cpp
+│   │   │   │   └── GameSettingRegistryChangeTracker.cpp
+│   │   │   ├── Widgets/
+│   │   │   │   ├── Misc/
+│   │   │   │   │   ├── GameSettingPressAnyKey.cpp
+│   │   │   │   │   ├── GameSettingRotator.cpp
+│   │   │   │   │   └── KeyAlreadyBoundWarning.cpp
+│   │   │   │   ├── Responsive/
+│   │   │   │   │   ├── GameResponsivePanel.cpp
+│   │   │   │   │   ├── GameResponsivePanel.h
+│   │   │   │   │   ├── GameResponsivePanelSlot.cpp
+│   │   │   │   │   ├── GameResponsivePanelSlot.h
+│   │   │   │   │   ├── SGameResponsivePanel.cpp
+│   │   │   │   │   └── SGameResponsivePanel.h
+│   │   │   │   ├── GameSettingDetailExtension.cpp
+│   │   │   │   ├── GameSettingDetailView.cpp
+│   │   │   │   ├── GameSettingListEntry.cpp
+│   │   │   │   ├── GameSettingListView.cpp
+│   │   │   │   ├── GameSettingPanel.cpp
+│   │   │   │   ├── GameSettingScreen.cpp
+│   │   │   │   ├── GameSettingVisualData.cpp
+│   │   │   │   └── IGameSettingActionInterface.cpp
+│   │   │   ├── GameSetting.cpp
+│   │   │   ├── GameSettingAction.cpp
+│   │   │   ├── GameSettingCollection.cpp
+│   │   │   ├── GameSettingFilterState.cpp
+│   │   │   ├── GameSettingValue.cpp
+│   │   │   ├── GameSettingValueDiscrete.cpp
+│   │   │   ├── GameSettingValueDiscreteDynamic.cpp
+│   │   │   ├── GameSettingValueScalar.cpp
+│   │   │   ├── GameSettingValueScalarDynamic.cpp
+│   │   │   └── GameSettingsModule.cpp
+│   │   ├── Public/
+│   │   │   ├── DataSource/
+│   │   │   │   ├── GameSettingDataSource.h
+│   │   │   │   └── GameSettingDataSourceDynamic.h
+│   │   │   ├── EditCondition/
+│   │   │   │   ├── WhenCondition.h
+│   │   │   │   ├── WhenPlatformHasTrait.h
+│   │   │   │   └── WhenPlayingAsPrimaryPlayer.h
+│   │   │   ├── Widgets/
+│   │   │   │   ├── Misc/
+│   │   │   │   │   ├── GameSettingPressAnyKey.h
+│   │   │   │   │   ├── GameSettingRotator.h
+│   │   │   │   │   └── KeyAlreadyBoundWarning.h
+│   │   │   │   ├── GameSettingDetailExtension.h
+│   │   │   │   ├── GameSettingDetailView.h
+│   │   │   │   ├── GameSettingListEntry.h
+│   │   │   │   ├── GameSettingListView.h
+│   │   │   │   ├── GameSettingPanel.h
+│   │   │   │   ├── GameSettingScreen.h
+│   │   │   │   ├── GameSettingVisualData.h
+│   │   │   │   └── IGameSettingActionInterface.h
+│   │   │   ├── GameSetting.h
+│   │   │   ├── GameSettingAction.h
+│   │   │   ├── GameSettingCollection.h
+│   │   │   ├── GameSettingFilterState.h
+│   │   │   ├── GameSettingRegistry.h
+│   │   │   ├── GameSettingRegistryChangeTracker.h
+│   │   │   ├── GameSettingValue.h
+│   │   │   ├── GameSettingValueDiscrete.h
+│   │   │   ├── GameSettingValueDiscreteDynamic.h
+│   │   │   ├── GameSettingValueScalar.h
+│   │   │   └── GameSettingValueScalarDynamic.h
+├── GameSubtitles/
+│   ├── Config/
+│   │   └── Tags/
+│   ├── Source/
+│   │   ├── Private/
+│   │   │   ├── Players/
+│   │   │   │   └── MediaSubtitlesPlayer.cpp
+│   │   │   ├── Widgets/
+│   │   │   │   ├── SSubtitleDisplay.cpp
+│   │   │   │   └── SubtitleDisplay.cpp
+│   │   │   ├── GameSubtitlesModule.cpp
+│   │   │   └── SubtitleDisplaySubsystem.cpp
+│   │   ├── Public/
+│   │   │   ├── Players/
+│   │   │   │   └── MediaSubtitlesPlayer.h
+│   │   │   ├── Widgets/
+│   │   │   │   ├── SSubtitleDisplay.h
+│   │   │   │   └── SubtitleDisplay.h
+│   │   │   ├── SubtitleDisplayOptions.h
+│   │   │   └── SubtitleDisplaySubsystem.h
+├── GameplayMessageRouter/
+│   ├── Source/
+│   │   ├── GameplayMessageNodes/
+│   │   │   ├── Private/
+│   │   │   │   ├── GameplayMessageNodesModule.cpp
+│   │   │   │   └── K2Node_AsyncAction_ListenForGameplayMessages.cpp
+│   │   │   ├── Public/
+│   │   │   │   └── K2Node_AsyncAction_ListenForGameplayMessages.h
+│   │   └── GameplayMessageRuntime/
+│   │       ├── Private/
+│   │       │   └── GameFramework/
+│   │       │       ├── AsyncAction_ListenForGameplayMessage.cpp
+│   │       │       ├── GameplayMessageRuntime.cpp
+│   │       │       └── GameplayMessageSubsystem.cpp
+│   │       ├── Public/
+│   │       │   └── GameFramework/
+│   │       │       ├── AsyncAction_ListenForGameplayMessage.h
+│   │       │       ├── GameplayMessageSubsystem.h
+│   │       │       └── GameplayMessageTypes2.h
+├── LyraExampleContent/
+│   ├── Content/
+│   │   ├── MSPresets/
+│   │   │   ├── MSTextures/
+│   │   │   └── M_MS_Surface_Material/
+│   │   │       ├── Functions/
+│   │   │       ├── SubSurfaceProfile/
+│   │   ├── Materials/
+│   │   │   ├── MF/
+│   │   │   ├── Textures/
+│   │   │   │   ├── GlassPattern/
+│   │   └── Megascans/
+│   │       └── Surfaces/
+│   │           ├── Dirty_Painted_Concrete_Wall_vdqfcg3/
+│   │           └── Fortified_Shelter_Wall_ubimbhrdy/
+├── LyraExtTool/
+│   ├── Content/
+│   ├── Resources/
+│   ├── Source/
+│   │   └── LyraExtTool/
+│   │       ├── Private/
+│   │       │   ├── BPFunctionLibrary.cpp
+│   │       │   └── LyraExtTool.cpp
+│   │       ├── Public/
+│   │       │   ├── BPFunctionLibrary.h
+│   │       │   └── LyraExtTool.h
+├── ModularGameplayActors/
+│   ├── Source/
+│   │   └── ModularGameplayActors/
+│   │       ├── Private/
+│   │       │   ├── ModularAIController.cpp
+│   │       │   ├── ModularCharacter.cpp
+│   │       │   ├── ModularGameMode.cpp
+│   │       │   ├── ModularGameState.cpp
+│   │       │   ├── ModularGameplayActorsModule.cpp
+│   │       │   ├── ModularPawn.cpp
+│   │       │   ├── ModularPlayerController.cpp
+│   │       │   └── ModularPlayerState.cpp
+│   │       ├── Public/
+│   │       │   ├── ModularAIController.h
+│   │       │   ├── ModularCharacter.h
+│   │       │   ├── ModularGameMode.h
+│   │       │   ├── ModularGameState.h
+│   │       │   ├── ModularPawn.h
+│   │       │   ├── ModularPlayerController.h
+│   │       │   └── ModularPlayerState.h
+├── PocketWorlds/
+│   ├── Content/
+│   ├── Source/
+│   │   ├── Private/
+│   │   │   ├── PocketCapture.cpp
+│   │   │   ├── PocketCaptureSubsystem.cpp
+│   │   │   ├── PocketLevel.cpp
+│   │   │   ├── PocketLevelInstance.cpp
+│   │   │   ├── PocketLevelSystem.cpp
+│   │   │   └── PocketWorldsModule.cpp
+│   │   ├── Public/
+│   │   │   ├── PocketCapture.h
+│   │   │   ├── PocketCaptureSubsystem.h
+│   │   │   ├── PocketLevel.h
+│   │   │   ├── PocketLevelInstance.h
+│   │   │   └── PocketLevelSystem.h
+└── UIExtension/
+    ├── Source/
+    │   ├── Private/
+    │   │   ├── Widgets/
+    │   │   │   └── UIExtensionPointWidget.cpp
+    │   │   ├── LogUIExtension.cpp
+    │   │   ├── LogUIExtension.h
+    │   │   ├── UIExtensionModule.cpp
+    │   │   └── UIExtensionSystem.cpp
+    │   ├── Public/
+    │   │   ├── Widgets/
+    │   │   │   └── UIExtensionPointWidget.h
+    │   │   └── UIExtensionSystem.h
